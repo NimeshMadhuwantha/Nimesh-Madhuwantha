@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Next.js App",
-  description: "A Next.js app powered by Tailwind CSS",
+  title: "Nimesh Madhuwantha | Portfolio",
+  description:
+    "Nimesh Madhuwantha — Front-End Software Engineer, UI/UX Engineer, Product Designer, Graphic Designer, Concept Artist, and Character Designer.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body>{children}</body>
     </html>
   );
