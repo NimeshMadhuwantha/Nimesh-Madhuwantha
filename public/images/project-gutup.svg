@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#071220"/>
+      <stop offset="100%" stop-color="#12304a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0f2233" stop-opacity=".92"/>
+      <stop offset="100%" stop-color="#163d59" stop-opacity=".92"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1260" cy="180" r="220" fill="#38BDF8" opacity=".16"/>
+  <circle cx="240" cy="860" r="260" fill="#0099FF" opacity=".12"/>
+  <rect x="140" y="140" width="1320" height="720" rx="42" fill="url(#card)" stroke="#90d9ff" stroke-opacity=".18"/>
+  <rect x="200" y="210" width="390" height="230" rx="24" fill="#122c42"/>
+  <rect x="620" y="210" width="780" height="120" rx="24" fill="#122c42"/>
+  <rect x="620" y="360" width="780" height="80" rx="24" fill="#122c42"/>
+  <rect x="200" y="490" width="1200" height="280" rx="32" fill="#0f2436"/>
+  <path d="M250 690 C360 560 460 560 560 650 S760 770 860 650 S1060 540 1360 700" fill="none" stroke="#38BDF8" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="570" cy="650" r="16" fill="#9fcaff"/>
+  <circle cx="860" cy="650" r="16" fill="#9fcaff"/>
+  <text x="210" y="315" fill="#dff7ff" font-family="Montserrat, Arial, sans-serif" font-size="72" font-weight="700">GutUp</text>
+  <text x="210" y="390" fill="#8fb5cf" font-family="Inter, Arial, sans-serif" font-size="34">Health-focused food platform</text>
+</svg>

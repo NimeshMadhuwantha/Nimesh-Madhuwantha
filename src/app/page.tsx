@@ -1,3 +1,5 @@
+"use client";
+
 import { PortfolioFrame } from "@/components/portfolio";
 
 export default function Home() {

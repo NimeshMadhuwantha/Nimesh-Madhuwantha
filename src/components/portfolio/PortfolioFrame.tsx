@@ -1,3 +1,5 @@
+"use client";
+
 const PORTFOLIO_DOCUMENT_PATH = "/portfolio.html";
 
 export function PortfolioFrame() {

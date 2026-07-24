@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Nimesh Madhuwantha | Portfolio",
   description:
-    "Nimesh Madhuwantha — Front-End Software Engineer, UI/UX Engineer, Product Designer, Graphic Designer, Concept Artist, and Character Designer.",
+    "Nimesh Madhuwantha - Front-End Software Engineer, UI/UX Engineer, Product Designer, and Concept Artist.",
 };
 
 export default function RootLayout({
