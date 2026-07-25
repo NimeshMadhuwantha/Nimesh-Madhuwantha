@@ -196,6 +196,17 @@
             scroll-snap-align: start;
         }
 
+        .project-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            padding: .25rem .75rem;
+            border-radius: 999px;
+            color: #7ee7ff;
+            background: rgba(126, 231, 255, .1);
+            border: 1px solid rgba(126, 231, 255, .2);
+        }
+
         .project-shell {
             position: relative;
         }
@@ -620,34 +631,31 @@ void main() {
 </div>
 </div>
 </div>
-</section>
 <section class="section-gap px-4 sm:px-5 md:px-gutter max-w-container-max mx-auto py-20 md:py-24" id="projects">
 <div class="flex flex-col xl:flex-row justify-between items-start xl:items-end mb-10 md:mb-16 gap-6 reveal-up">
 <div>
 <h2 class="font-headline-lg text-4xl md:text-headline-lg">Featured <span class="text-tertiary">Projects</span></h2>
-<p class="text-on-surface-variant max-w-2xl mt-4">A responsive slider of web, design, and art work from my portfolio. Use the category buttons or the side controls to browse.</p>
+<p class="text-on-surface-variant max-w-2xl mt-4">Explore selected work across web development, UI/UX, graphic design, and traditional art.</p>
 </div>
-<div class="flex flex-wrap items-center gap-3">
-<button class="project-filter bg-gradient-to-r from-ocean-blue to-cyan-glow text-white px-5 py-2.5 rounded-full border border-cyan-glow/40 transition-all" data-filter="all" type="button">All</button>
-<button class="project-filter bg-surface-container-high px-5 py-2.5 rounded-full border border-white/5 hover:border-cyan-glow transition-all" data-filter="web" type="button">Web</button>
-<button class="project-filter bg-surface-container-high px-5 py-2.5 rounded-full border border-white/5 hover:border-cyan-glow transition-all" data-filter="design" type="button">Design</button>
-<button class="project-filter bg-surface-container-high px-5 py-2.5 rounded-full border border-white/5 hover:border-cyan-glow transition-all" data-filter="arts" type="button">Arts</button>
 </div>
+<div class="mb-6 md:mb-8 reveal-up">
+<p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">01 · Web</p>
+<h3 class="font-headline-md text-2xl md:text-3xl">Web Experiences</h3>
 </div>
 <div class="project-shell reveal-up" style="transition-delay: 100ms">
 <div class="hidden lg:block">
-<button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-prev" type="button">
+<button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="project-track" id="projects-prev" type="button">
 <span class="material-symbols-outlined">arrow_back</span>
 </button>
-<button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-next" type="button">
+<button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="project-track" id="projects-next" type="button">
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
 <div class="flex lg:hidden justify-end gap-3 mb-4">
-<button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-prev-mobile" type="button">
+<button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="project-track" id="projects-prev-mobile" type="button">
 <span class="material-symbols-outlined">arrow_back</span>
 </button>
-<button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-next-mobile" type="button">
+<button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="project-track" id="projects-next-mobile" type="button">
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
@@ -656,12 +664,9 @@ void main() {
 <article class="project-card group reveal-up" data-category="web design">
 <div class="glass-card overflow-hidden rounded-[32px] h-full">
 <div class="relative aspect-[16/10] overflow-hidden">
-<img alt="GutUp healthcare project cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-gutup.svg"/>
+<img alt="Atnurmi brand website" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/web-atnurmi.webp"/>
 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://gutup.ch/" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined">visibility</span>
-</a>
-<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://gutup.ch/" rel="noreferrer" target="_blank">
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://atnurmi.com/" rel="noreferrer" target="_blank">
 <span class="material-symbols-outlined">link</span>
 </a>
 </div>
@@ -670,86 +675,68 @@ void main() {
 <div class="flex flex-wrap gap-2 mb-3">
 <span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Next.js</span>
 <span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">TypeScript</span>
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Shadcn</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Tailwind CSS</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Full Stack</span>
 </div>
-<h3 class="font-headline-md text-2xl mb-2">GutUp</h3>
-<p class="text-on-surface-variant text-body-md">Multilingual health-focused food platform with recipe creation, food categories, custom recipe management, and a complete admin panel.</p>
+<h3 class="font-headline-md text-2xl mb-2">Atnurmi</h3>
+<p class="text-on-surface-variant text-body-md">A modern full-stack brand website built entirely with Next.js, featuring creative services, graphic arts, sketches, product designs, frontend development, and digital item downloads through an engaging user experience.</p>
 </div>
 </div>
 </article>
 <article class="project-card group reveal-up" data-category="web design" style="transition-delay: 100ms">
 <div class="glass-card overflow-hidden rounded-[32px] h-full">
 <div class="relative aspect-[16/10] overflow-hidden">
-<img alt="Atnurmi website project cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-atnurmi.svg"/>
+<img alt="Game Seek video games interface" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/web-game-seek.webp"/>
 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://atnurmi.com/" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined">visibility</span>
-</a>
-<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://atnurmi.com/" rel="noreferrer" target="_blank">
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://game-seek-tqmt.vercel.app/" rel="noreferrer" target="_blank">
 <span class="material-symbols-outlined">link</span>
 </a>
 </div>
 </div>
 <div class="p-6">
 <div class="flex flex-wrap gap-2 mb-3">
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Next.js</span>
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Tailwind CSS</span>
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Full Stack</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">React</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">TypeScript</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Chakra UI</span>
 </div>
-<h3 class="font-headline-md text-2xl mb-2">Atnurmi</h3>
-<p class="text-on-surface-variant text-body-md">Creative brand website featuring services, graphic arts, sketches, product design, front-end work, and digital item downloads.</p>
+<h3 class="font-headline-md text-2xl mb-2">Game Seek</h3>
+<p class="text-on-surface-variant text-body-md">An attractive front-end video game discovery interface built with an API to browse game details, genres, ratings, and rich media.</p>
 </div>
 </div>
 </article>
 <article class="project-card group reveal-up" data-category="web design" style="transition-delay: 200ms">
 <div class="glass-card overflow-hidden rounded-[32px] h-full">
 <div class="relative aspect-[16/10] overflow-hidden">
-<img alt="BrandSpark project cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-brandspark.svg"/>
-<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://github.com/Hasindu30/Brandspark-fe.git" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined">visibility</span>
-</a>
-<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://github.com/Hasindu30/Brandspark-fe.git" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined">link</span>
-</a>
-</div>
+<img alt="Currency converter web application" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/web-cuurecy-exchane.webp"/>
 </div>
 <div class="p-6">
 <div class="flex flex-wrap gap-2 mb-3">
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">MERN</span>
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">ReactJS</span>
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">AI Branding</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">JavaScript</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">React</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Tailwind CSS</span>
 </div>
-<h3 class="font-headline-md text-2xl mb-2">BrandSpark</h3>
-<p class="text-on-surface-variant text-body-md">AI-based brand promotion web application with logo tools, brand name generation, secure login/signup, and expert-facing experiences.</p>
+<h3 class="font-headline-md text-2xl mb-2">Currency Converter</h3>
+<p class="text-on-surface-variant text-body-md">A responsive currency conversion web application built with JavaScript, React, Tailwind CSS, and a live exchange-rate API.</p>
 </div>
 </div>
 </article>
-<article class="project-card group reveal-up" data-category="design" style="transition-delay: 300ms">
+<article class="project-card group reveal-up" data-category="web" style="transition-delay: 300ms">
 <div class="glass-card overflow-hidden rounded-[32px] h-full">
 <div class="relative aspect-[16/10] overflow-hidden">
-<img alt="Clothing shop POS design cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-pos.svg"/>
-<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://www.figma.com/proto/glzJSCf4GC6g4ZamLiN3Zm/Clothing-Shop-Pos-System?node-id=105-1139&amp;p=f&amp;t=n31uN17a2jvAhKSi-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=5%3A3&amp;starting-point-node-id=105%3A1139&amp;show-proto-sidebar=1" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined">visibility</span>
-</a>
-<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://www.figma.com/proto/glzJSCf4GC6g4ZamLiN3Zm/Clothing-Shop-Pos-System?node-id=105-1139&amp;p=f&amp;t=n31uN17a2jvAhKSi-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=5%3A3&amp;starting-point-node-id=105%3A1139&amp;show-proto-sidebar=1" rel="noreferrer" target="_blank">
-<span class="material-symbols-outlined">link</span>
-</a>
-</div>
+<img alt="Weather application built with Python" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/web-weatherapp-python.webp"/>
 </div>
 <div class="p-6">
 <div class="flex flex-wrap gap-2 mb-3">
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Figma</span>
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">UI/UX</span>
-<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Prototype</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Python</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Tkinter</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Weather API</span>
 </div>
-<h3 class="font-headline-md text-2xl mb-2">Clothing Shop POS System</h3>
-<p class="text-on-surface-variant text-body-md">Complete Figma prototype with admin and cashier dashboards, login flows, intuitive workflows, and a clean professional interface.</p>
+<h3 class="font-headline-md text-2xl mb-2">Weather Application</h3>
+<p class="text-on-surface-variant text-body-md">A Python and Tkinter weather application that displays current conditions for cities and places around the world through a weather API.</p>
 </div>
 </div>
 </article>
-<article class="project-card group reveal-up" data-category="arts" style="transition-delay: 400ms">
+<article class="project-card hidden group reveal-up" data-category="arts" style="transition-delay: 400ms">
 <div class="glass-card overflow-hidden rounded-[32px] h-full">
 <div class="relative aspect-[16/10] overflow-hidden">
 <img alt="Pencil art collection cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-pencil-art.svg"/>
@@ -773,7 +760,7 @@ void main() {
 </div>
 </div>
 </article>
-<article class="project-card group reveal-up" data-category="arts design" style="transition-delay: 500ms">
+<article class="project-card hidden group reveal-up" data-category="arts design" style="transition-delay: 500ms">
 <div class="glass-card overflow-hidden rounded-[32px] h-full">
 <div class="relative aspect-[16/10] overflow-hidden">
 <img alt="Concept and visual design project cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-concept-art.svg"/>
@@ -799,6 +786,34 @@ void main() {
 </article>
 </div>
 </div>
+</div>
+<div class="mt-16 md:mt-20">
+<div class="mb-6 md:mb-8 reveal-up"><p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">02 · UI/UX</p><h3 class="font-headline-md text-2xl md:text-3xl">Interface &amp; Product Design</h3></div>
+<div class="project-shell reveal-up"><div class="hidden lg:block"><button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="uiux-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="uiux-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="flex lg:hidden justify-end gap-3 mb-4"><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="uiux-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="uiux-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="overflow-hidden"><div class="project-track flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 px-1" id="uiux-track">
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="CNU Cloth Shop UI design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/uiux-full.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Figma</span><span class="project-tag">E-commerce UI</span></div><h4 class="font-headline-md text-2xl mb-2">CNU Cloth Shop</h4><p class="text-on-surface-variant text-body-md">A full clothing and outfit e-commerce website UI for browsing, selling, and discovering fashion products, designed in Figma.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Healthcare mobile app UI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/uiux-screen2.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Figma</span><span class="project-tag">Prototype</span></div><h4 class="font-headline-md text-2xl mb-2">Healthcare Mobile App</h4><p class="text-on-surface-variant text-body-md">A healthcare mobile UI designed in Figma with a complete prototype for accessible, calm, and user-friendly patient experiences.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Full POS system UI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/uiux-screen5.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Figma</span><span class="project-tag">POS System</span></div><h4 class="font-headline-md text-2xl mb-2">Full POS System</h4><p class="text-on-surface-variant text-body-md">A complete POS and inventory management UI with admin, super admin, and cashier screens, supported by a full Figma prototype.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Pizza delivery mobile UI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/uiux-screen3.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Figma</span><span class="project-tag">Mobile Prototype</span></div><h4 class="font-headline-md text-2xl mb-2">Pizza Delivery App</h4><p class="text-on-surface-variant text-body-md">An attractive pizza delivery mobile app interface with a smooth ordering journey and interactive Figma prototype.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Flowers and cakes delivery e-commerce UI" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/uiux-scren1.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Figma</span><span class="project-tag">Payment Flow</span></div><h4 class="font-headline-md text-2xl mb-2">Flowers &amp; Cakes Delivery</h4><p class="text-on-surface-variant text-body-md">A complete e-commerce website UI for bouquets, flower vases, and cakes, including checkout and payment flows with a Figma prototype.</p></div></div></article>
+</div></div></div></div>
+<div class="mt-16 md:mt-20"><div class="mb-6 md:mb-8 reveal-up"><p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">03 · Graphic</p><h3 class="font-headline-md text-2xl md:text-3xl">Graphic Design &amp; Visuals</h3></div><div class="project-shell reveal-up"><div class="hidden lg:block"><button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="graphic-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="graphic-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="flex lg:hidden justify-end gap-3 mb-4"><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="graphic-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="graphic-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="overflow-hidden"><div class="project-track flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 px-1" id="graphic-track">
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Social media flyer design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/Flyer-social-media-download.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Campaign</span><span class="project-tag">Flyer</span></div><h4 class="font-headline-md text-2xl mb-2">Social Media Campaign</h4><p class="text-on-surface-variant text-body-md">Bold promotional artwork created for digital campaigns and social-first communication.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Dress promotional flyer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/graphic-flyer-dress.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Branding</span><span class="project-tag">Print</span></div><h4 class="font-headline-md text-2xl mb-2">Fashion Flyer</h4><p class="text-on-surface-variant text-body-md">A vibrant fashion-focused composition combining product imagery, typography, and color.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Breedmin brand identity logo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/graphic-logo-breedmin.webp"/><div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4"><a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://breedmin.com/" rel="noreferrer" target="_blank"><span class="material-symbols-outlined">open_in_new</span></a></div></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Logo</span><span class="project-tag">Identity</span></div><h4 class="font-headline-md text-2xl mb-2">Brand Identity Mark</h4><p class="text-on-surface-variant text-body-md">Brand identity and logo creation for Breedmin, shaped into a clear and memorable visual signature.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Pencil social media flyer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/Flyer-social-media-pencil.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Social Media</span><span class="project-tag">Illustration</span></div><h4 class="font-headline-md text-2xl mb-2">Illustrated Campaign</h4><p class="text-on-surface-variant text-body-md">An illustrated campaign visual combining hand-drawn character, composition, and promotional messaging.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Post design website visual" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/post-web-social.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Post Design</span><span class="project-tag">Website Visual</span></div><h4 class="font-headline-md text-2xl mb-2">Post Design Website</h4><p class="text-on-surface-variant text-body-md">A graphic post and website design concept focused on presenting one clear message through attractive digital composition.</p></div></div></article>
+</div></div></div></div>
+<div class="mt-16 md:mt-20"><div class="mb-6 md:mb-8 reveal-up"><p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">04 · Art</p><h3 class="font-headline-md text-2xl md:text-3xl">Traditional &amp; Concept Art</h3></div><div class="project-shell reveal-up"><div class="hidden lg:block"><button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="art-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="art-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="flex lg:hidden justify-end gap-3 mb-4"><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="art-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="art-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="overflow-hidden"><div class="project-track flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 px-1" id="art-track">
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Pencil art portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/Pencil-art-emma.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Pencil</span><span class="project-tag">Portrait</span></div><h4 class="font-headline-md text-2xl mb-2">Pencil Portraits</h4><p class="text-on-surface-variant text-body-md">Detailed graphite studies focused on expression, texture, and patient observation.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Digital art snow fox" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/g-art-snow-fox.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Digital Art</span><span class="project-tag">Illustration</span></div><h4 class="font-headline-md text-2xl mb-2">Digital Art Studies</h4><p class="text-on-surface-variant text-body-md">Digital artwork exploring atmosphere, color, and expressive character-focused illustration.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Concept pencil art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-moongirl.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Concept Art</span><span class="project-tag">Sketching</span></div><h4 class="font-headline-md text-2xl mb-2">Visual Character Studies</h4><p class="text-on-surface-variant text-body-md">Character-led studies exploring mood, silhouette, and imaginative visual storytelling.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Cartoon character drawing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-g2-skul-girl.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Cartoon</span><span class="project-tag">Character Drawing</span></div><h4 class="font-headline-md text-2xl mb-2">Character Commissions</h4><p class="text-on-surface-variant text-body-md">Cartoon and character drawings developed from requested ideas, personalities, and visual references.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Dragon concept pencil art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-dragon.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Fantasy</span><span class="project-tag">Concept</span></div><h4 class="font-headline-md text-2xl mb-2">Fantasy Sketchbook</h4><p class="text-on-surface-variant text-body-md">Imaginative fantasy sketches exploring creature design, gesture, and visual atmosphere.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Step by step character art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-g5-step2.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Character</span><span class="project-tag">Process</span></div><h4 class="font-headline-md text-2xl mb-2">Character Development</h4><p class="text-on-surface-variant text-body-md">A character drawing process showing how an idea develops from rough concept into a refined illustration.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Moose pencil artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-moose.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Pencil</span><span class="project-tag">Wildlife</span></div><h4 class="font-headline-md text-2xl mb-2">Wildlife Drawing</h4><p class="text-on-surface-variant text-body-md">A detailed wildlife drawing built with expressive contours, texture, and careful tonal shading.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Joker pencil artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/pencil-art-joker.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Portrait</span><span class="project-tag">Graphite</span></div><h4 class="font-headline-md text-2xl mb-2">Portrait Study</h4><p class="text-on-surface-variant text-body-md">A dramatic graphite portrait study focused on expression, contrast, and character.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Pencil art study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/pencil-art-n.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Pencil</span><span class="project-tag">Sketch</span></div><h4 class="font-headline-md text-2xl mb-2">Graphite Sketches</h4><p class="text-on-surface-variant text-body-md">Observational pencil sketches built around line quality, proportion, and subtle detail.</p></div></div></article>
+</div></div></div></div>
 </div>
 </section>
 <section class="section-gap px-5 md:px-gutter py-14 md:py-16 bg-primary-container/20">
@@ -1108,53 +1123,22 @@ void main() {
             });
         }
 
-        const projectTrack = document.getElementById('project-track');
-        const projectCards = Array.from(document.querySelectorAll('.project-card'));
-        const projectFilters = Array.from(document.querySelectorAll('.project-filter'));
+        const projectTracks = Array.from(document.querySelectorAll('.project-track'));
 
-        function scrollProjects(direction) {
-            if (!projectTrack) return;
-            const card = projectTrack.querySelector('.project-card:not(.hidden)');
+        function scrollProjects(track, direction) {
+            const card = track.querySelector('.project-card:not(.hidden)');
             const amount = card ? card.getBoundingClientRect().width + 24 : 404;
-            projectTrack.scrollBy({ left: direction * amount, behavior: 'smooth' });
+            track.scrollBy({ left: direction * amount, behavior: 'smooth' });
         }
 
-        function setFilter(filter) {
-            projectFilters.forEach((button) => {
-                const active = button.dataset.filter === filter;
-                button.classList.toggle('bg-gradient-to-r', active);
-                button.classList.toggle('from-ocean-blue', active);
-                button.classList.toggle('to-cyan-glow', active);
-                button.classList.toggle('text-white', active);
-                button.classList.toggle('border-cyan-glow/40', active);
-                if (!active) {
-                    button.classList.add('bg-surface-container-high');
-                } else {
-                    button.classList.remove('bg-surface-container-high');
-                }
+        projectTracks.forEach((projectTrack) => {
+            document.querySelectorAll(`[data-project-prev="${projectTrack.id}"]`).forEach((button) => {
+                button.addEventListener('click', () => scrollProjects(projectTrack, -1));
+            });
+            document.querySelectorAll(`[data-project-next="${projectTrack.id}"]`).forEach((button) => {
+                button.addEventListener('click', () => scrollProjects(projectTrack, 1));
             });
 
-            projectCards.forEach((card) => {
-                const categories = (card.dataset.category || '').split(' ');
-                const show = filter === 'all' || categories.includes(filter);
-                card.classList.toggle('hidden', !show);
-            });
-
-            if (projectTrack) {
-                projectTrack.scrollTo({ left: 0, behavior: 'smooth' });
-            }
-        }
-
-        projectFilters.forEach((button) => {
-            button.addEventListener('click', () => setFilter(button.dataset.filter || 'all'));
-        });
-
-        document.getElementById('projects-prev')?.addEventListener('click', () => scrollProjects(-1));
-        document.getElementById('projects-next')?.addEventListener('click', () => scrollProjects(1));
-        document.getElementById('projects-prev-mobile')?.addEventListener('click', () => scrollProjects(-1));
-        document.getElementById('projects-next-mobile')?.addEventListener('click', () => scrollProjects(1));
-
-        if (projectTrack) {
             let isDragging = false;
             let startX = 0;
             let startScrollLeft = 0;
@@ -1201,9 +1185,7 @@ void main() {
             }, { passive: true });
 
             projectTrack.addEventListener('touchend', endDrag, { passive: true });
-        }
-
-        setFilter('all');
+        });
     </script>
 </body>
 </html>
