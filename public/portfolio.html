@@ -196,6 +196,17 @@
             scroll-snap-align: start;
         }
 
+        .project-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            padding: .25rem .75rem;
+            border-radius: 999px;
+            color: #7ee7ff;
+            background: rgba(126, 231, 255, .1);
+            border: 1px solid rgba(126, 231, 255, .2);
+        }
+
         .project-shell {
             position: relative;
         }
@@ -620,34 +631,31 @@ void main() {
 </div>
 </div>
 </div>
-</section>
 <section class="section-gap px-4 sm:px-5 md:px-gutter max-w-container-max mx-auto py-20 md:py-24" id="projects">
 <div class="flex flex-col xl:flex-row justify-between items-start xl:items-end mb-10 md:mb-16 gap-6 reveal-up">
 <div>
 <h2 class="font-headline-lg text-4xl md:text-headline-lg">Featured <span class="text-tertiary">Projects</span></h2>
-<p class="text-on-surface-variant max-w-2xl mt-4">A responsive slider of web, design, and art work from my portfolio. Use the category buttons or the side controls to browse.</p>
+<p class="text-on-surface-variant max-w-2xl mt-4">Explore selected work across web development, UI/UX, graphic design, and traditional art.</p>
 </div>
-<div class="flex flex-wrap items-center gap-3">
-<button class="project-filter bg-gradient-to-r from-ocean-blue to-cyan-glow text-white px-5 py-2.5 rounded-full border border-cyan-glow/40 transition-all" data-filter="all" type="button">All</button>
-<button class="project-filter bg-surface-container-high px-5 py-2.5 rounded-full border border-white/5 hover:border-cyan-glow transition-all" data-filter="web" type="button">Web</button>
-<button class="project-filter bg-surface-container-high px-5 py-2.5 rounded-full border border-white/5 hover:border-cyan-glow transition-all" data-filter="design" type="button">Design</button>
-<button class="project-filter bg-surface-container-high px-5 py-2.5 rounded-full border border-white/5 hover:border-cyan-glow transition-all" data-filter="arts" type="button">Arts</button>
 </div>
+<div class="mb-6 md:mb-8 reveal-up">
+<p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">01 · Web</p>
+<h3 class="font-headline-md text-2xl md:text-3xl">Web Experiences</h3>
 </div>
 <div class="project-shell reveal-up" style="transition-delay: 100ms">
 <div class="hidden lg:block">
-<button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-prev" type="button">
+<button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="project-track" id="projects-prev" type="button">
 <span class="material-symbols-outlined">arrow_back</span>
 </button>
-<button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-next" type="button">
+<button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="project-track" id="projects-next" type="button">
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
 <div class="flex lg:hidden justify-end gap-3 mb-4">
-<button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-prev-mobile" type="button">
+<button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="project-track" id="projects-prev-mobile" type="button">
 <span class="material-symbols-outlined">arrow_back</span>
 </button>
-<button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-next-mobile" type="button">
+<button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="project-track" id="projects-next-mobile" type="button">
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
@@ -725,7 +733,7 @@ void main() {
 </div>
 </div>
 </article>
-<article class="project-card group reveal-up" data-category="design" style="transition-delay: 300ms">
+<article class="project-card hidden group reveal-up" data-category="design" style="transition-delay: 300ms">
 <div class="glass-card overflow-hidden rounded-[32px] h-full">
 <div class="relative aspect-[16/10] overflow-hidden">
 <img alt="Clothing shop POS design cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-pos.svg"/>
@@ -749,7 +757,7 @@ void main() {
 </div>
 </div>
 </article>
-<article class="project-card group reveal-up" data-category="arts" style="transition-delay: 400ms">
+<article class="project-card hidden group reveal-up" data-category="arts" style="transition-delay: 400ms">
 <div class="glass-card overflow-hidden rounded-[32px] h-full">
 <div class="relative aspect-[16/10] overflow-hidden">
 <img alt="Pencil art collection cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-pencil-art.svg"/>
@@ -773,7 +781,7 @@ void main() {
 </div>
 </div>
 </article>
-<article class="project-card group reveal-up" data-category="arts design" style="transition-delay: 500ms">
+<article class="project-card hidden group reveal-up" data-category="arts design" style="transition-delay: 500ms">
 <div class="glass-card overflow-hidden rounded-[32px] h-full">
 <div class="relative aspect-[16/10] overflow-hidden">
 <img alt="Concept and visual design project cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-concept-art.svg"/>
@@ -799,6 +807,24 @@ void main() {
 </article>
 </div>
 </div>
+</div>
+<div class="mt-16 md:mt-20">
+<div class="mb-6 md:mb-8 reveal-up"><p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">02 · UI/UX</p><h3 class="font-headline-md text-2xl md:text-3xl">Interface &amp; Product Design</h3></div>
+<div class="project-shell reveal-up"><div class="hidden lg:block"><button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="uiux-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="uiux-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="flex lg:hidden justify-end gap-3 mb-4"><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="uiux-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="uiux-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="overflow-hidden"><div class="project-track flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 px-1" id="uiux-track">
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="UI UX dashboard design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/uiux-full.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">UI/UX</span><span class="project-tag">Dashboard</span></div><h4 class="font-headline-md text-2xl mb-2">Dashboard System</h4><p class="text-on-surface-variant text-body-md">A focused product dashboard concept designed around clear navigation and efficient workflows.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="UI UX mobile screen design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/uiux-screen2.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Mobile UI</span><span class="project-tag">Prototype</span></div><h4 class="font-headline-md text-2xl mb-2">Mobile Experience</h4><p class="text-on-surface-variant text-body-md">Responsive mobile screens balancing visual hierarchy, accessibility, and intuitive interaction.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="UI UX screen collection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/uiux-screen5.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Figma</span><span class="project-tag">Visual Design</span></div><h4 class="font-headline-md text-2xl mb-2">Interface Study</h4><p class="text-on-surface-variant text-body-md">A polished interface study exploring layout systems, components, and product storytelling.</p></div></div></article>
+</div></div></div></div>
+<div class="mt-16 md:mt-20"><div class="mb-6 md:mb-8 reveal-up"><p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">03 · Graphic</p><h3 class="font-headline-md text-2xl md:text-3xl">Graphic Design &amp; Visuals</h3></div><div class="project-shell reveal-up"><div class="hidden lg:block"><button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="graphic-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="graphic-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="flex lg:hidden justify-end gap-3 mb-4"><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="graphic-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="graphic-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="overflow-hidden"><div class="project-track flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 px-1" id="graphic-track">
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Social media flyer design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/Flyer-social-media-download.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Campaign</span><span class="project-tag">Flyer</span></div><h4 class="font-headline-md text-2xl mb-2">Social Media Campaign</h4><p class="text-on-surface-variant text-body-md">Bold promotional artwork created for digital campaigns and social-first communication.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Dress promotional flyer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/graphic-flyer-dress.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Branding</span><span class="project-tag">Print</span></div><h4 class="font-headline-md text-2xl mb-2">Fashion Flyer</h4><p class="text-on-surface-variant text-body-md">A vibrant fashion-focused composition combining product imagery, typography, and color.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Moose logo design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/logo-moose.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Logo</span><span class="project-tag">Identity</span></div><h4 class="font-headline-md text-2xl mb-2">Brand Identity Mark</h4><p class="text-on-surface-variant text-body-md">A clean identity exploration developed to give a memorable brand a strong visual signature.</p></div></div></article>
+</div></div></div></div>
+<div class="mt-16 md:mt-20"><div class="mb-6 md:mb-8 reveal-up"><p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">04 · Art</p><h3 class="font-headline-md text-2xl md:text-3xl">Traditional &amp; Concept Art</h3></div><div class="project-shell reveal-up"><div class="hidden lg:block"><button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="art-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="art-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="flex lg:hidden justify-end gap-3 mb-4"><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="art-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="art-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="overflow-hidden"><div class="project-track flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 px-1" id="art-track">
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Pencil art portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/Pencil-art-emma.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Pencil</span><span class="project-tag">Portrait</span></div><h4 class="font-headline-md text-2xl mb-2">Pencil Portraits</h4><p class="text-on-surface-variant text-body-md">Detailed graphite studies focused on expression, texture, and patient observation.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Watercolor bird painting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/waterColour-bird.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Watercolor</span><span class="project-tag">Nature</span></div><h4 class="font-headline-md text-2xl mb-2">Watercolour Studies</h4><p class="text-on-surface-variant text-body-md">Soft color studies inspired by nature, movement, and expressive brushwork.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Concept pencil art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-moongirl.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Concept Art</span><span class="project-tag">Sketching</span></div><h4 class="font-headline-md text-2xl mb-2">Visual Character Studies</h4><p class="text-on-surface-variant text-body-md">Character-led studies exploring mood, silhouette, and imaginative visual storytelling.</p></div></div></article>
+</div></div></div></div>
 </div>
 </section>
 <section class="section-gap px-5 md:px-gutter py-14 md:py-16 bg-primary-container/20">
@@ -1108,53 +1134,22 @@ void main() {
             });
         }
 
-        const projectTrack = document.getElementById('project-track');
-        const projectCards = Array.from(document.querySelectorAll('.project-card'));
-        const projectFilters = Array.from(document.querySelectorAll('.project-filter'));
+        const projectTracks = Array.from(document.querySelectorAll('.project-track'));
 
-        function scrollProjects(direction) {
-            if (!projectTrack) return;
-            const card = projectTrack.querySelector('.project-card:not(.hidden)');
+        function scrollProjects(track, direction) {
+            const card = track.querySelector('.project-card:not(.hidden)');
             const amount = card ? card.getBoundingClientRect().width + 24 : 404;
-            projectTrack.scrollBy({ left: direction * amount, behavior: 'smooth' });
+            track.scrollBy({ left: direction * amount, behavior: 'smooth' });
         }
 
-        function setFilter(filter) {
-            projectFilters.forEach((button) => {
-                const active = button.dataset.filter === filter;
-                button.classList.toggle('bg-gradient-to-r', active);
-                button.classList.toggle('from-ocean-blue', active);
-                button.classList.toggle('to-cyan-glow', active);
-                button.classList.toggle('text-white', active);
-                button.classList.toggle('border-cyan-glow/40', active);
-                if (!active) {
-                    button.classList.add('bg-surface-container-high');
-                } else {
-                    button.classList.remove('bg-surface-container-high');
-                }
+        projectTracks.forEach((projectTrack) => {
+            document.querySelectorAll(`[data-project-prev="${projectTrack.id}"]`).forEach((button) => {
+                button.addEventListener('click', () => scrollProjects(projectTrack, -1));
+            });
+            document.querySelectorAll(`[data-project-next="${projectTrack.id}"]`).forEach((button) => {
+                button.addEventListener('click', () => scrollProjects(projectTrack, 1));
             });
 
-            projectCards.forEach((card) => {
-                const categories = (card.dataset.category || '').split(' ');
-                const show = filter === 'all' || categories.includes(filter);
-                card.classList.toggle('hidden', !show);
-            });
-
-            if (projectTrack) {
-                projectTrack.scrollTo({ left: 0, behavior: 'smooth' });
-            }
-        }
-
-        projectFilters.forEach((button) => {
-            button.addEventListener('click', () => setFilter(button.dataset.filter || 'all'));
-        });
-
-        document.getElementById('projects-prev')?.addEventListener('click', () => scrollProjects(-1));
-        document.getElementById('projects-next')?.addEventListener('click', () => scrollProjects(1));
-        document.getElementById('projects-prev-mobile')?.addEventListener('click', () => scrollProjects(-1));
-        document.getElementById('projects-next-mobile')?.addEventListener('click', () => scrollProjects(1));
-
-        if (projectTrack) {
             let isDragging = false;
             let startX = 0;
             let startScrollLeft = 0;
@@ -1201,9 +1196,7 @@ void main() {
             }, { passive: true });
 
             projectTrack.addEventListener('touchend', endDrag, { passive: true });
-        }
-
-        setFilter('all');
+        });
     </script>
 </body>
 </html>
