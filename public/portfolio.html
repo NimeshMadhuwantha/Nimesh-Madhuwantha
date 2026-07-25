@@ -118,6 +118,8 @@
             background-image: linear-gradient(rgba(56,189,248,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,.035) 1px, transparent 1px);
             background-size: 72px 72px;
             mask-image: linear-gradient(to bottom, black, transparent 92%);
+            transform: perspective(900px) rotateX(calc(var(--tilt-y, 0) * .04deg)) rotateY(calc(var(--tilt-x, 0) * .04deg));
+            transition: transform 1s ease-out;
         }
         .ambient-orb {
             position: absolute;
@@ -243,6 +245,7 @@
         .project-track.dragging {
             cursor: grabbing;
             scroll-snap-type: none;
+            scroll-behavior: auto;
         }
 
         .project-card {
@@ -557,7 +560,7 @@ void main() {
 <span class="w-2 h-2 rounded-full bg-cyan-glow animate-pulse"></span>
 <span class="text-[11px] sm:text-label-md tracking-[0.18em] text-on-surface-variant uppercase">Available for new opportunities</span>
 </div>
-<h1 class="font-headline-xl font-black tracking-[-0.04em] text-[2.8rem] leading-[0.95] sm:text-5xl sm:leading-tight md:text-6xl lg:text-headline-xl">
+<h1 class="font-headline-xl font-extrabold tracking-[-0.04em] text-[2.35rem] leading-[0.95] sm:text-5xl sm:leading-tight md:text-6xl lg:text-headline-xl">
                     NIMESH <br/>
 <span class="gradient-text">MADHUWANTHA</span>
 </h1>
@@ -750,7 +753,7 @@ void main() {
 <span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Full Stack</span>
 </div>
 <h3 class="font-headline-md text-2xl mb-2">Atnurmi</h3>
-<p class="text-on-surface-variant text-body-md">A modern full-stack brand website built entirely with Next.js, featuring creative services, graphic arts, sketches, product designs, frontend development, and digital item downloads through an engaging user experience.</p>
+<p class="text-on-surface-variant text-body-md">A modern Next.js full-stack brand website for creative services, product design, frontend work, and digital downloads.</p>
 </div>
 </div>
 </article>
@@ -1199,9 +1202,25 @@ void main() {
         const projectTracks = Array.from(document.querySelectorAll('.project-track'));
 
         function scrollProjects(track, direction) {
-            const card = track.querySelector('.project-card:not(.hidden)');
-            const amount = card ? card.getBoundingClientRect().width + 24 : 404;
-            track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+            const cards = Array.from(track.querySelectorAll('.project-card:not(.hidden)'));
+            if (!cards.length) return;
+            const current = track.scrollLeft;
+            let index = cards.reduce((closest, card, cardIndex) => {
+                const offset = card.offsetLeft - track.offsetLeft;
+                return Math.abs(offset - current) < Math.abs((cards[closest].offsetLeft - track.offsetLeft) - current) ? cardIndex : closest;
+            }, 0);
+            index = Math.max(0, Math.min(cards.length - 1, index + direction));
+            track.scrollTo({ left: cards[index].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        }
+
+        function snapProjectTrack(track) {
+            const cards = Array.from(track.querySelectorAll('.project-card:not(.hidden)'));
+            if (!cards.length) return;
+            const nearest = cards.reduce((closest, card, index) => {
+                const offset = card.offsetLeft - track.offsetLeft;
+                return Math.abs(offset - track.scrollLeft) < Math.abs((cards[closest].offsetLeft - track.offsetLeft) - track.scrollLeft) ? index : closest;
+            }, 0);
+            track.scrollTo({ left: cards[nearest].offsetLeft - track.offsetLeft, behavior: 'smooth' });
         }
 
         projectTracks.forEach((projectTrack) => {
@@ -1239,7 +1258,7 @@ void main() {
                     return;
                 }
                 if (dragAxis !== 'x') return;
-                projectTrack.scrollLeft = startScrollLeft - deltaX;
+                projectTrack.scrollLeft = startScrollLeft - (deltaX * 1.5);
             };
 
             const endDrag = () => {
@@ -1255,10 +1274,10 @@ void main() {
             projectTrack.addEventListener('pointermove', (event) => moveDrag(event.clientX, event.clientY));
             projectTrack.addEventListener('pointerup', (event) => {
                 projectTrack.releasePointerCapture?.(event.pointerId);
+                if (dragAxis === 'x') snapProjectTrack(projectTrack);
                 endDrag();
             });
             projectTrack.addEventListener('pointercancel', endDrag);
-            projectTrack.addEventListener('pointerleave', endDrag);
         });
 
         const ambientBackground = document.getElementById('ambient-background');
@@ -1266,6 +1285,8 @@ void main() {
             if (!ambientBackground) return;
             ambientBackground.style.setProperty('--motion-x', String(Math.max(-24, Math.min(24, x))));
             ambientBackground.style.setProperty('--motion-y', String(Math.max(-24, Math.min(24, y))));
+            ambientBackground.style.setProperty('--tilt-x', String(x));
+            ambientBackground.style.setProperty('--tilt-y', String(y));
         };
         window.addEventListener('pointermove', (event) => {
             if (event.pointerType === 'touch') return;
