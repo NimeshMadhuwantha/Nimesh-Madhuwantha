@@ -182,7 +182,8 @@
             overscroll-behavior-inline: contain;
             touch-action: pan-y pinch-zoom;
             overflow-y: hidden;
-            overscroll-behavior-y: none;
+            overscroll-behavior-y: auto;
+            overflow-y: clip;
             -webkit-overflow-scrolling: touch;
             scroll-padding-inline: .25rem;
             cursor: grab;
@@ -1154,19 +1155,32 @@ void main() {
 
             let isDragging = false;
             let startX = 0;
+            let startY = 0;
+            let dragAxis = null;
             let startScrollLeft = 0;
 
-            const startDrag = (clientX) => {
+            const startDrag = (clientX, clientY) => {
                 isDragging = true;
                 startX = clientX;
+                startY = clientY;
+                dragAxis = null;
                 startScrollLeft = projectTrack.scrollLeft;
                 projectTrack.classList.add('dragging');
             };
 
-            const moveDrag = (clientX) => {
+            const moveDrag = (clientX, clientY) => {
                 if (!isDragging) return;
-                const walk = clientX - startX;
-                projectTrack.scrollLeft = startScrollLeft - walk;
+                const deltaX = clientX - startX;
+                const deltaY = clientY - startY;
+                if (!dragAxis && Math.max(Math.abs(deltaX), Math.abs(deltaY)) > 6) {
+                    dragAxis = Math.abs(deltaX) >= Math.abs(deltaY) ? 'x' : 'y';
+                }
+                if (dragAxis === 'y') {
+                    endDrag();
+                    return;
+                }
+                if (dragAxis !== 'x') return;
+                projectTrack.scrollLeft = startScrollLeft - deltaX;
             };
 
             const endDrag = () => {
@@ -1176,10 +1190,10 @@ void main() {
 
             projectTrack.addEventListener('pointerdown', (event) => {
                 if (event.pointerType === 'mouse' && event.button !== 0) return;
-                startDrag(event.clientX);
+                startDrag(event.clientX, event.clientY);
                 projectTrack.setPointerCapture?.(event.pointerId);
             });
-            projectTrack.addEventListener('pointermove', (event) => moveDrag(event.clientX));
+            projectTrack.addEventListener('pointermove', (event) => moveDrag(event.clientX, event.clientY));
             projectTrack.addEventListener('pointerup', (event) => {
                 projectTrack.releasePointerCapture?.(event.pointerId);
                 endDrag();
