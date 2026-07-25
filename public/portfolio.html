@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nimesh Madhuwantha | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#bbc7dc",
+                    "tertiary-fixed-dim": "#9fcaff",
+                    "primary-fixed": "#dfe1f6",
+                    "on-primary-fixed-variant": "#434657",
+                    "surface-container-lowest": "#0b0f10",
+                    "secondary-fixed": "#d7e3f9",
+                    "surface-container-highest": "#323537",
+                    "primary-container": "#050816",
+                    "on-primary-fixed": "#171b2a",
+                    "surface-container-low": "#191c1e",
+                    "on-primary": "#2c303f",
+                    "tertiary-fixed": "#d2e4ff",
+                    "surface-variant": "#323537",
+                    "on-tertiary-container": "#007cd0",
+                    "inverse-surface": "#e0e3e5",
+                    "on-secondary-fixed-variant": "#3c4759",
+                    "primary": "#c3c5da",
+                    "surface-container-high": "#272a2c",
+                    "surface-tint": "#c3c5da",
+                    "on-secondary-fixed": "#111c2b",
+                    "outline-variant": "#46464c",
+                    "on-background": "#e0e3e5",
+                    "surface-bright": "#363a3b",
+                    "on-tertiary-fixed": "#001d36",
+                    "tertiary-container": "#000917",
+                    "inverse-primary": "#5a5e6f",
+                    "surface-container": "#1d2022",
+                    "on-tertiary": "#003259",
+                    "outline": "#919097",
+                    "surface": "#101415",
+                    "on-secondary-container": "#aab6ca",
+                    "secondary-container": "#3c4759",
+                    "background": "#101415",
+                    "error-container": "#93000a",
+                    "error": "#ffb4ab",
+                    "surface-dim": "#101415",
+                    "on-surface": "#e0e3e5",
+                    "tertiary": "#9fcaff",
+                    "on-error": "#690005",
+                    "on-surface-variant": "#c7c6cd",
+                    "inverse-on-surface": "#2d3133",
+                    "secondary": "#bbc7dc",
+                    "primary-fixed-dim": "#c3c5da",
+                    "on-secondary": "#263141",
+                    "on-tertiary-fixed-variant": "#00497e",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#75788a",
+                    "cyan-glow": "#38BDF8",
+                    "ocean-blue": "#0099FF"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "margin-mobile": "20px",
+                    "section-gap": "120px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "headline-xl-mobile": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-xl-mobile": ["42px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-xl": ["80px", {"lineHeight": "96px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation { animation: float 6s ease-in-out infinite; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #38BDF8;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #9fcaff 0%, #38BDF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .magnetic-button {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .magnetic-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 153, 255, 0.3);
+        }
+
+        .custom-cursor {
+            width: 10px;
+            height: 10px;
+            background: #38BDF8;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+        }
+        .cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b0f10; }
+        ::-webkit-scrollbar-thumb { background: #323537; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38BDF8; }
+
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .social-icon {
+            width: 1.35rem;
+            height: 1.35rem;
+            fill: currentColor;
+        }
+
+        .project-track {
+            scrollbar-width: none;
+        }
+        .project-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-card {
+            flex: 0 0 min(100%, 380px);
+            scroll-snap-align: start;
+        }
+
+        .timeline-dot::before {
+            content: "";
+            position: absolute;
+            left: -2.15rem;
+            top: 0.4rem;
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 9999px;
+            background: #38BDF8;
+            box-shadow: 0 0 15px #38BDF8;
+        }
+
+        @media (max-width: 767px) {
+            .custom-cursor,
+            .cursor-follower {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-cyan-glow/30">
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<div class="cursor-follower hidden md:block" id="cursor-follower"></div>
+<!-- STITCH_SHADER_START:ANIMATION_10 class="fixed inset-0 w-full h-full opacity-40 pointer-events-none z-[-2]" -->
+<div class="fixed inset-0 w-full h-full opacity-40 pointer-events-none z-[-2]" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_10" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_10');
+  function syncSize() {
+    const w = canvas.clientWidth || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+float noise(vec2 p) {
+    return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+}
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 mouse = u_mouse / u_resolution;
+    vec3 color1 = vec3(0.019, 0.031, 0.086);
+    vec3 color2 = vec3(0.031, 0.078, 0.137);
+    vec3 accent = vec3(0.0, 0.6, 1.0);
+    vec3 glow = vec3(0.22, 0.74, 0.97);
+    float flow = sin(uv.x * 2.0 + u_time * 0.5) * cos(uv.y * 2.0 + u_time * 0.3);
+    float flow2 = cos(uv.x * 3.0 - u_time * 0.4) * sin(uv.y * 1.5 + u_time * 0.6);
+    vec3 base = mix(color1, color2, uv.y + flow * 0.2);
+    float dist = distance(uv, mouse);
+    float mGlow = smoothstep(0.4, 0.0, dist) * 0.15;
+    float waves = smoothstep(0.4, 0.6, flow + flow2);
+    vec3 finalColor = mix(base, accent, waves * 0.05);
+    finalColor += glow * mGlow;
+    float vignette = 1.0 - smoothstep(0.5, 1.5, length(uv - 0.5));
+    finalColor *= vignette;
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_10 -->
+<!-- STITCH_THREEJS_START:ANIMATION_11 class="fixed inset-0 w-full h-full opacity-30 pointer-events-none z-[-1]" -->
+<div class="fixed inset-0 w-full h-full opacity-30 pointer-events-none z-[-1]" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_11" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_11');
+  const width = container.clientWidth || window.innerWidth;
+  const height = container.clientHeight || window.innerHeight;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+  scene.add(ambientLight);
+  const pointLight = new THREE.PointLight(0x0099FF, 2);
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
+  const geometry = new THREE.IcosahedronGeometry(0.1, 0);
+  const material = new THREE.MeshPhongMaterial({
+      color: 0x38BDF8,
+      transparent: true,
+      opacity: 0.6,
+      shininess: 100
+  });
+  const particles = [];
+  for (let i = 0; i < 40; i++) {
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.position.set(
+          (Math.random() - 0.5) * 10,
+          (Math.random() - 0.5) * 10,
+          (Math.random() - 0.5) * 10
+      );
+      mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+      mesh.userData = {
+          speed: Math.random() * 0.005 + 0.002,
+          rotationSpeed: Math.random() * 0.01
+      };
+      scene.add(mesh);
+      particles.push(mesh);
+  }
+  camera.position.z = 5;
+  let mouseX = 0;
+  let mouseY = 0;
+  window.addEventListener('mousemove', (event) => {
+      mouseX = (event.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = (event.clientY / window.innerHeight - 0.5) * -2;
+  });
+  function animate() {
+      requestAnimationFrame(animate);
+      particles.forEach((p) => {
+          p.position.y += Math.sin(Date.now() * 0.001 + p.position.x) * 0.002;
+          p.rotation.x += p.userData.rotationSpeed;
+          p.rotation.y += p.userData.rotationSpeed;
+      });
+      camera.position.x += (mouseX - camera.position.x) * 0.05;
+      camera.position.y += (mouseY - camera.position.y) * 0.05;
+      camera.lookAt(scene.position);
+      renderer.render(scene, camera);
+  }
+  animate();
+  window.addEventListener('resize', () => {
+      const newWidth = container.clientWidth || window.innerWidth;
+      const newHeight = container.clientHeight || window.innerHeight;
+      camera.aspect = newWidth / newHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(newWidth, newHeight);
+  });
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_11 -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center px-5 md:px-gutter py-4 max-w-container-max mx-auto gap-4">
+<div class="font-headline-md text-2xl md:text-headline-md font-bold text-on-surface tracking-tighter">
+                Nimesh <span class="text-tertiary">M.</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-label-md uppercase tracking-widest">
+<a class="text-tertiary relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-tertiary" href="#home">Home</a>
+<a class="text-on-surface-variant/80 hover:text-on-surface transition-colors" href="#projects">Projects</a>
+<a class="text-on-surface-variant/80 hover:text-on-surface transition-colors" href="#experience">Journey</a>
+<a class="text-on-surface-variant/80 hover:text-on-surface transition-colors" href="#skills">Skills</a>
+<a class="text-on-surface-variant/80 hover:text-on-surface transition-colors" href="#contact">Contact</a>
+</div>
+<div class="hidden md:flex items-center gap-3">
+<a class="bg-gradient-to-r from-ocean-blue to-cyan-glow text-on-primary-fixed px-6 py-2.5 rounded-full font-bold magnetic-button shadow-lg shadow-ocean-blue/20" href="#contact">
+                Hire Me
+            </a>
+</div>
+<button aria-controls="mobile-menu" aria-expanded="false" class="md:hidden w-11 h-11 rounded-2xl glass-card flex items-center justify-center" id="mobile-menu-button" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="hidden md:hidden px-5 pb-5" id="mobile-menu">
+<div class="glass-card rounded-3xl p-4 flex flex-col gap-3 font-label-md uppercase tracking-widest">
+<a class="px-3 py-2 rounded-2xl hover:bg-white/5" href="#home">Home</a>
+<a class="px-3 py-2 rounded-2xl hover:bg-white/5" href="#projects">Projects</a>
+<a class="px-3 py-2 rounded-2xl hover:bg-white/5" href="#experience">Journey</a>
+<a class="px-3 py-2 rounded-2xl hover:bg-white/5" href="#skills">Skills</a>
+<a class="px-3 py-2 rounded-2xl hover:bg-white/5" href="#contact">Contact</a>
+<a class="bg-gradient-to-r from-ocean-blue to-cyan-glow text-on-primary-fixed px-4 py-3 rounded-2xl text-center font-bold" href="#contact">Hire Me</a>
+</div>
+</div>
+</nav>
+<header class="min-h-screen flex items-center pt-28 md:pt-24 px-5 md:px-gutter relative overflow-hidden" id="home">
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+<div class="lg:col-span-7 space-y-8 z-10 order-2 lg:order-1">
+<div class="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-2">
+<span class="w-2 h-2 rounded-full bg-cyan-glow animate-pulse"></span>
+<span class="text-label-md tracking-widest text-on-surface-variant uppercase">Available for new opportunities</span>
+</div>
+<h1 class="font-headline-xl text-5xl sm:text-6xl lg:text-headline-xl leading-tight">
+                    NIMESH <br/>
+<span class="gradient-text">MADHUWANTHA</span>
+</h1>
+<div class="h-12 overflow-hidden">
+<div class="transition-transform duration-500 font-headline-md text-2xl md:text-headline-md text-tertiary-fixed-dim" id="rotating-titles">
+<div class="h-12">Front-End Software Engineer</div>
+<div class="h-12">UI/UX Engineer</div>
+<div class="h-12">Product Designer</div>
+<div class="h-12">Concept Artist</div>
+</div>
+</div>
+<p class="font-body-lg text-base sm:text-body-lg text-on-surface-variant max-w-2xl">
+                    Front-End Software Engineer focused on responsive, user-centric digital experiences. I combine clean development, UI implementation, API integration, debugging, testing, and visual design to build products that feel polished from first impression to final interaction.
+                </p>
+<div class="flex flex-wrap gap-4 pt-2">
+<a class="bg-gradient-to-r from-ocean-blue to-cyan-glow text-white px-8 py-4 rounded-full font-bold magnetic-button flex items-center gap-2" href="#projects">
+                        View Projects <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="glass-card px-8 py-4 rounded-full font-bold magnetic-button" download="" href="/NIMESH_MADHUWANTHA_FlowCV_Resume_2026-07-24.pdf">
+                        Download CV
+                    </a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-4">
+<a class="glass-card rounded-2xl px-4 py-3 flex items-center justify-center gap-3 text-on-surface-variant hover:text-cyan-glow" href="https://dribbble.com/Madhu6114" rel="noreferrer" target="_blank">
+<svg aria-hidden="true" class="social-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm6.93 4.62a8.34 8.34 0 0 1 1.86 5.13 28.5 28.5 0 0 0-6.8-.3c-.24-.55-.5-1.09-.78-1.62a24.25 24.25 0 0 0 5.72-3.21ZM12 3.67a8.3 8.3 0 0 1 5.72 2.28 22.52 22.52 0 0 1-5.2 2.88 41.08 41.08 0 0 0-2.44-3.74A8.43 8.43 0 0 1 12 3.67Zm-3.76.9a39.59 39.59 0 0 1 2.42 3.7 35.06 35.06 0 0 1-7.17 1A8.35 8.35 0 0 1 8.24 4.57ZM3.24 12c0-.35.02-.7.07-1.04a36.73 36.73 0 0 0 8.13-1.18c.23.45.45.91.65 1.37l-.32.09C8.35 12.3 6.08 14.49 5 17.67A8.33 8.33 0 0 1 3.24 12Zm3.06 6.8c.86-2.65 2.72-4.5 6.08-5.64l.08-.02c.75 1.95 1.3 4 1.62 6.1A8.35 8.35 0 0 1 6.3 18.8Zm9.43-.52a41.85 41.85 0 0 0-1.54-5.72 26.38 26.38 0 0 1 6.31.42 8.35 8.35 0 0 1-4.77 5.3Z"/></svg>
+<span class="text-sm">Dribbble</span>
+</a>
+<a class="glass-card rounded-2xl px-4 py-3 flex items-center justify-center gap-3 text-on-surface-variant hover:text-cyan-glow" href="https://github.com/NimeshMadhuwantha" rel="noreferrer" target="_blank">
+<svg aria-hidden="true" class="social-icon" viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.39c.6.11.82-.26.82-.58l-.02-2.04c-3.34.73-4.04-1.42-4.04-1.42a3.18 3.18 0 0 0-1.34-1.76c-1.1-.76.08-.75.08-.75a2.52 2.52 0 0 1 1.84 1.24 2.55 2.55 0 0 0 3.48.99 2.56 2.56 0 0 1 .76-1.6c-2.67-.31-5.47-1.33-5.47-5.93a4.64 4.64 0 0 1 1.23-3.22 4.32 4.32 0 0 1 .12-3.17s1-.32 3.3 1.23a11.33 11.33 0 0 1 6 0c2.29-1.55 3.29-1.23 3.29-1.23a4.32 4.32 0 0 1 .12 3.17 4.63 4.63 0 0 1 1.22 3.22c0 4.61-2.8 5.61-5.48 5.92a2.87 2.87 0 0 1 .82 2.22l-.02 3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .5Z"/></svg>
+<span class="text-sm">GitHub</span>
+</a>
+<a class="glass-card rounded-2xl px-4 py-3 flex items-center justify-center gap-3 text-on-surface-variant hover:text-cyan-glow" href="https://www.linkedin.com/in/nimesh-m-8a37102b4/" rel="noreferrer" target="_blank">
+<svg aria-hidden="true" class="social-icon" viewBox="0 0 24 24"><path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46 2.48 2.48 0 0 0 4.98 3.5ZM3 9h4v12H3Zm7 0h3.83v1.71h.05A4.2 4.2 0 0 1 17.66 8c4.03 0 4.77 2.65 4.77 6.09V21h-4v-6.12c0-1.46-.03-3.34-2.03-3.34-2.03 0-2.34 1.59-2.34 3.23V21h-4Z"/></svg>
+<span class="text-sm">LinkedIn</span>
+</a>
+<a class="glass-card rounded-2xl px-4 py-3 flex items-center justify-center gap-3 text-on-surface-variant hover:text-cyan-glow" href="https://www.behance.net/nimeshmadhu" rel="noreferrer" target="_blank">
+<svg aria-hidden="true" class="social-icon" viewBox="0 0 24 24"><path d="M8.07 10.62c1.1 0 1.94-.78 1.94-1.86 0-1.08-.85-1.73-1.94-1.73H3V17h5.35c1.74 0 2.91-.97 2.91-2.53 0-1.31-.83-2.14-2.19-2.29ZM5.3 8.82h2.17c.66 0 1.03.33 1.03.91 0 .59-.37.95-1.03.95H5.3Zm2.36 6.3H5.3v-2.47h2.36c.9 0 1.38.4 1.38 1.22 0 .83-.48 1.25-1.38 1.25ZM18.22 9.61c-2.94 0-4.58 2.07-4.58 4.75 0 2.79 1.61 4.63 4.63 4.63 2.41 0 3.86-1.27 4.3-3.02h-2.2c-.23.74-.92 1.2-2.03 1.2-1.36 0-2.16-.88-2.22-2.3H23c.1-3.32-1.5-5.26-4.78-5.26Zm0 1.72c1.26 0 2 .74 2.1 2.02h-4.18c.18-1.28.98-2.02 2.08-2.02ZM15.35 6.12h5.65V7.5h-5.65Z"/></svg>
+<span class="text-sm">Behance</span>
+</a>
+<a class="glass-card rounded-2xl px-4 py-3 flex items-center justify-center gap-3 text-on-surface-variant hover:text-cyan-glow" href="https://atnurmi.com/" rel="noreferrer" target="_blank">
+<span class="w-5 h-5 rounded-full bg-gradient-to-r from-ocean-blue to-cyan-glow"></span>
+<span class="text-sm">Atnurmi</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative flex justify-center order-1 lg:order-2">
+<div class="relative w-[280px] h-[360px] sm:w-80 sm:h-[450px] md:w-[420px] md:h-[530px] group">
+<div class="absolute -inset-4 bg-cyan-glow/20 blur-3xl rounded-full opacity-50 group-hover:opacity-75 transition-opacity"></div>
+<div class="relative w-full h-full overflow-hidden glass-card rounded-[40px] border-2 border-white/20 transform rotate-2 group-hover:rotate-0 transition-transform duration-700">
+<img alt="Nimesh Madhuwantha portrait" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" src="/images/profilepic.webp"/>
+</div>
+<div class="absolute -bottom-6 -right-2 md:-bottom-8 md:-right-8 w-36 md:w-40 glass-card rounded-3xl p-5 float-animation">
+<div class="text-3xl font-bold text-tertiary">5+</div>
+<div class="text-label-md text-on-surface-variant uppercase">Years Creative Experience</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<section class="section-gap px-5 md:px-gutter max-w-container-max mx-auto py-20 md:py-24">
+<div class="text-center mb-16 md:mb-20 reveal-up">
+<h2 class="font-headline-lg text-4xl md:text-headline-lg mb-4">About <span class="text-tertiary">Me</span></h2>
+<p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                I work at the intersection of engineering, product thinking, and visual creativity. My background spans responsive front-end development, UI implementation, debugging, testing, wireframing, concept art, and polished presentation work, so I can help shape products from idea to finished experience.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
+<div class="glass-card p-8 rounded-3xl reveal-up" style="transition-delay: 100ms">
+<span class="material-symbols-outlined text-cyan-glow text-4xl mb-6">code</span>
+<h3 class="font-headline-md text-2xl mb-4">Front-End Dev</h3>
+<p class="text-on-surface-variant">Responsive UI development with React, Next.js, TypeScript, Tailwind CSS, and practical API integration.</p>
+</div>
+<div class="glass-card p-8 rounded-3xl reveal-up" style="transition-delay: 200ms">
+<span class="material-symbols-outlined text-cyan-glow text-4xl mb-6">architecture</span>
+<h3 class="font-headline-md text-2xl mb-4">UI/UX Design</h3>
+<p class="text-on-surface-variant">Wireframing, prototyping, and interface refinement with a usability-first mindset using Figma and visual systems.</p>
+</div>
+<div class="glass-card p-8 rounded-3xl reveal-up" style="transition-delay: 300ms">
+<span class="material-symbols-outlined text-cyan-glow text-4xl mb-6">deployed_code</span>
+<h3 class="font-headline-md text-2xl mb-4">Product Thinking</h3>
+<p class="text-on-surface-variant">Feature delivery, version control, collaboration, and practical problem solving shaped by real client and company work.</p>
+</div>
+<div class="glass-card p-8 rounded-3xl reveal-up" style="transition-delay: 400ms">
+<span class="material-symbols-outlined text-cyan-glow text-4xl mb-6">draw</span>
+<h3 class="font-headline-md text-2xl mb-4">Art &amp; Visuals</h3>
+<p class="text-on-surface-variant">Concept art, sketching, and polished graphic outputs that bring creative direction into digital products and brand work.</p>
+</div>
+</div>
+</section>
+<section class="section-gap px-5 md:px-gutter py-20 md:py-24 bg-surface-container-lowest/30 relative" id="skills">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-4xl md:text-headline-lg text-center mb-14 md:mb-16 reveal-up">Technical <span class="text-tertiary">Arsenal</span></h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+<div class="glass-card p-8 md:p-10 rounded-[32px] reveal-up">
+<p class="text-label-md text-tertiary uppercase tracking-widest mb-4">Programming Languages</p>
+<h3 class="font-headline-md text-2xl mb-4">Built for modern interfaces</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">HTML</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">CSS</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">JavaScript</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">TypeScript</span>
+</div>
+</div>
+<div class="glass-card p-8 md:p-10 rounded-[32px] reveal-up" style="transition-delay: 100ms">
+<p class="text-label-md text-tertiary uppercase tracking-widest mb-4">Frameworks and Libraries</p>
+<h3 class="font-headline-md text-2xl mb-4">Fast, flexible product stacks</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">ReactJS</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Next.js</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Tailwind CSS</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Shadcn/UI</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Bootstrap</span>
+</div>
+</div>
+<div class="glass-card p-8 md:p-10 rounded-[32px] reveal-up" style="transition-delay: 200ms">
+<p class="text-label-md text-tertiary uppercase tracking-widest mb-4">Technologies and Tools</p>
+<h3 class="font-headline-md text-2xl mb-4">Creative and delivery workflow</h3>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Git</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Figma</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Krita</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Photoshop</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Illustrator</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">2D Pencil</span>
+<span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">Trello</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section-gap px-5 md:px-gutter max-w-container-max mx-auto py-20 md:py-24" id="projects">
+<div class="flex flex-col xl:flex-row justify-between items-start xl:items-end mb-10 md:mb-16 gap-6 reveal-up">
+<div>
+<h2 class="font-headline-lg text-4xl md:text-headline-lg">Featured <span class="text-tertiary">Projects</span></h2>
+<p class="text-on-surface-variant max-w-2xl mt-4">A responsive slider of web, design, and art work from my portfolio. Use the category buttons or the side controls to browse.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<button class="project-filter bg-gradient-to-r from-ocean-blue to-cyan-glow text-white px-5 py-2.5 rounded-full border border-cyan-glow/40 transition-all" data-filter="all" type="button">All</button>
+<button class="project-filter bg-surface-container-high px-5 py-2.5 rounded-full border border-white/5 hover:border-cyan-glow transition-all" data-filter="web" type="button">Web</button>
+<button class="project-filter bg-surface-container-high px-5 py-2.5 rounded-full border border-white/5 hover:border-cyan-glow transition-all" data-filter="design" type="button">Design</button>
+<button class="project-filter bg-surface-container-high px-5 py-2.5 rounded-full border border-white/5 hover:border-cyan-glow transition-all" data-filter="arts" type="button">Arts</button>
+<div class="flex gap-3 ml-0 xl:ml-3">
+<button class="w-11 h-11 rounded-full glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-prev" type="button">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-11 h-11 rounded-full glass-card flex items-center justify-center hover:border-cyan-glow" id="projects-next" type="button">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="overflow-hidden">
+<div class="project-track flex gap-6 overflow-x-auto snap-x snap-mandatory pb-3" id="project-track">
+<article class="project-card group reveal-up" data-category="web design">
+<div class="glass-card overflow-hidden rounded-[32px] h-full">
+<div class="relative aspect-[16/10] overflow-hidden">
+<img alt="GutUp healthcare project cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-gutup.svg"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://gutup.ch/" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://gutup.ch/" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Next.js</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">TypeScript</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Shadcn</span>
+</div>
+<h3 class="font-headline-md text-2xl mb-2">GutUp</h3>
+<p class="text-on-surface-variant text-body-md">Multilingual health-focused food platform with recipe creation, food categories, custom recipe management, and a complete admin panel.</p>
+</div>
+</div>
+</article>
+<article class="project-card group reveal-up" data-category="web design" style="transition-delay: 100ms">
+<div class="glass-card overflow-hidden rounded-[32px] h-full">
+<div class="relative aspect-[16/10] overflow-hidden">
+<img alt="Atnurmi website project cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-atnurmi.svg"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://atnurmi.com/" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://atnurmi.com/" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Next.js</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Tailwind CSS</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Full Stack</span>
+</div>
+<h3 class="font-headline-md text-2xl mb-2">Atnurmi</h3>
+<p class="text-on-surface-variant text-body-md">Creative brand website featuring services, graphic arts, sketches, product design, front-end work, and digital item downloads.</p>
+</div>
+</div>
+</article>
+<article class="project-card group reveal-up" data-category="web design" style="transition-delay: 200ms">
+<div class="glass-card overflow-hidden rounded-[32px] h-full">
+<div class="relative aspect-[16/10] overflow-hidden">
+<img alt="BrandSpark project cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-brandspark.svg"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://github.com/Hasindu30/Brandspark-fe.git" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://github.com/Hasindu30/Brandspark-fe.git" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">MERN</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">ReactJS</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">AI Branding</span>
+</div>
+<h3 class="font-headline-md text-2xl mb-2">BrandSpark</h3>
+<p class="text-on-surface-variant text-body-md">AI-based brand promotion web application with logo tools, brand name generation, secure login/signup, and expert-facing experiences.</p>
+</div>
+</div>
+</article>
+<article class="project-card group reveal-up" data-category="design" style="transition-delay: 300ms">
+<div class="glass-card overflow-hidden rounded-[32px] h-full">
+<div class="relative aspect-[16/10] overflow-hidden">
+<img alt="Clothing shop POS design cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-pos.svg"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://www.figma.com/proto/glzJSCf4GC6g4ZamLiN3Zm/Clothing-Shop-Pos-System?node-id=105-1139&amp;p=f&amp;t=n31uN17a2jvAhKSi-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=5%3A3&amp;starting-point-node-id=105%3A1139&amp;show-proto-sidebar=1" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://www.figma.com/proto/glzJSCf4GC6g4ZamLiN3Zm/Clothing-Shop-Pos-System?node-id=105-1139&amp;p=f&amp;t=n31uN17a2jvAhKSi-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=5%3A3&amp;starting-point-node-id=105%3A1139&amp;show-proto-sidebar=1" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Figma</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">UI/UX</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Prototype</span>
+</div>
+<h3 class="font-headline-md text-2xl mb-2">Clothing Shop POS System</h3>
+<p class="text-on-surface-variant text-body-md">Complete Figma prototype with admin and cashier dashboards, login flows, intuitive workflows, and a clean professional interface.</p>
+</div>
+</div>
+</article>
+<article class="project-card group reveal-up" data-category="arts" style="transition-delay: 400ms">
+<div class="glass-card overflow-hidden rounded-[32px] h-full">
+<div class="relative aspect-[16/10] overflow-hidden">
+<img alt="Pencil art collection cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-pencil-art.svg"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://www.behance.net/nimeshmadhu" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://dribbble.com/Madhu6114" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">2D Pencil</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Sketching</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Art</span>
+</div>
+<h3 class="font-headline-md text-2xl mb-2">Pencil Art Collection</h3>
+<p class="text-on-surface-variant text-body-md">A curated set of pencil studies and art-driven visuals that reflect observation, detail, patience, and traditional craft.</p>
+</div>
+</div>
+</article>
+<article class="project-card group reveal-up" data-category="arts design" style="transition-delay: 500ms">
+<div class="glass-card overflow-hidden rounded-[32px] h-full">
+<div class="relative aspect-[16/10] overflow-hidden">
+<img alt="Concept and visual design project cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/project-concept-art.svg"/>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://www.behance.net/nimeshmadhu" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">visibility</span>
+</a>
+<a class="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-cyan-glow/20 transition-all" href="https://atnurmi.com/" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Concept Art</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Product Design</span>
+<span class="text-[10px] uppercase tracking-tighter px-3 py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20">Visual Storytelling</span>
+</div>
+<h3 class="font-headline-md text-2xl mb-2">Visual Concept Studies</h3>
+<p class="text-on-surface-variant text-body-md">Creative exploration work connecting composition, brand mood, product direction, and polished presentation for visual-first ideas.</p>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section-gap px-5 md:px-gutter py-14 md:py-16 bg-primary-container/20">
+<div class="max-w-container-max mx-auto text-center reveal-up">
+<h2 class="font-headline-lg text-4xl md:text-headline-lg mb-10 md:mb-12">The <span class="text-tertiary">Numbers</span></h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
+<div class="glass-card p-6 md:p-7 rounded-3xl">
+<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">5+</div>
+<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Years Creative Work</div>
+</div>
+<div class="glass-card p-6 md:p-7 rounded-3xl">
+<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">4</div>
+<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Highlighted Domains</div>
+</div>
+<div class="glass-card p-6 md:p-7 rounded-3xl">
+<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">3.28</div>
+<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Current GPA</div>
+</div>
+<div class="glass-card p-6 md:p-7 rounded-3xl">
+<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">2024</div>
+<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Latest Certifications</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section-gap px-5 md:px-gutter max-w-container-max mx-auto py-20 md:py-24" id="experience">
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-14">
+<div class="reveal-up">
+<h2 class="font-headline-lg text-4xl md:text-headline-lg mb-10 flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary text-5xl">work</span>
+                    Journey
+                </h2>
+<div class="relative border-l-2 border-white/10 ml-4 space-y-10 py-4 pl-8">
+<div class="relative timeline-dot">
+<div class="text-tertiary font-bold mb-1">Feb 2025 - Aug 2025</div>
+<h4 class="font-headline-md text-xl">Front-End Software Engineer Intern</h4>
+<p class="text-on-surface-variant mb-4">Zynovatex (Pvt) Ltd.</p>
+<p class="text-body-md text-on-surface-variant/80">Worked on responsive UI development, API integration, debugging, testing, feature implementation, version control with Git, and UI/UX prototyping using Figma.</p>
+</div>
+<div class="relative timeline-dot">
+<div class="text-tertiary font-bold mb-1">Nov 2020 - Aug 2025</div>
+<h4 class="font-headline-md text-xl">Artist | Product Designer</h4>
+<p class="text-on-surface-variant mb-4">Fiverr (Level 2)</p>
+<p class="text-body-md text-on-surface-variant/80">Delivered idea design, concept art, pencil sketches, UI/UX design, and product design for global clients with a strong focus on communication, delivery, and client satisfaction.</p>
+</div>
+</div>
+</div>
+<div class="reveal-up" style="transition-delay: 100ms">
+<h2 class="font-headline-lg text-4xl md:text-headline-lg mb-10 flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary text-5xl">school</span>
+                    Education
+                </h2>
+<div class="space-y-6">
+<div class="glass-card rounded-[28px] p-6">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-3">
+<div>
+<h4 class="font-headline-md text-xl">BSc. (Hons) in Computing and Information Systems</h4>
+<p class="text-on-surface-variant">Sabaragamuwa University of Sri Lanka</p>
+<p class="text-on-surface-variant/80 mt-2">Current GPA : 3.28</p>
+</div>
+<div class="text-tertiary font-bold whitespace-nowrap">2022 - present</div>
+</div>
+</div>
+<div class="glass-card rounded-[28px] p-6">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-3">
+<div>
+<h4 class="font-headline-md text-xl">G.C.E Advanced Level (Physical Science Stream)</h4>
+<p class="text-on-surface-variant">Ruhunu Vijayaba National Collage</p>
+</div>
+<div class="text-tertiary font-bold whitespace-nowrap">2020</div>
+</div>
+</div>
+<div class="glass-card rounded-[28px] p-6">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-3">
+<div>
+<h4 class="font-headline-md text-xl">G.C.E Ordinary Level (English Medium)</h4>
+<p class="text-on-surface-variant">Ruhunu Vijayaba National Collage</p>
+</div>
+<div class="text-tertiary font-bold whitespace-nowrap">2016</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-14 mt-10">
+<div class="reveal-up">
+<h2 class="font-headline-lg text-4xl md:text-headline-lg mb-10 flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary text-5xl">workspace_premium</span>
+                    Certificates
+                </h2>
+<div class="space-y-4">
+<div class="glass-card rounded-[24px] p-5 flex flex-col sm:flex-row sm:justify-between gap-2">
+<div>
+<h4 class="font-headline-md text-lg">Web Design for Beginners</h4>
+<p class="text-on-surface-variant">University of Moratuwa</p>
+</div>
+<div class="text-tertiary font-bold">2024</div>
+</div>
+<div class="glass-card rounded-[24px] p-5 flex flex-col sm:flex-row sm:justify-between gap-2">
+<div>
+<h4 class="font-headline-md text-lg">Foundations of User Experience (UX) Design</h4>
+<p class="text-on-surface-variant">Google</p>
+</div>
+<div class="text-tertiary font-bold">2024</div>
+</div>
+<div class="glass-card rounded-[24px] p-5 flex flex-col sm:flex-row sm:justify-between gap-2">
+<div>
+<h4 class="font-headline-md text-lg">Python for Beginners</h4>
+<p class="text-on-surface-variant">University of Moratuwa</p>
+</div>
+<div class="text-tertiary font-bold">2024</div>
+</div>
+</div>
+</div>
+<div class="reveal-up" style="transition-delay: 100ms">
+<h2 class="font-headline-lg text-4xl md:text-headline-lg mb-10 flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary text-5xl">volunteer_activism</span>
+                    Highlights
+                </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="glass-card rounded-[24px] p-5">
+<p class="text-label-md text-tertiary uppercase tracking-widest mb-3">Soft Skills</p>
+<p class="text-on-surface-variant">Leadership, communication, collaboration, project delivery, adaptability, and problem solving.</p>
+</div>
+<div class="glass-card rounded-[24px] p-5">
+<p class="text-label-md text-tertiary uppercase tracking-widest mb-3">Creative Skills</p>
+<p class="text-on-surface-variant">Sketching, pencil drawing, concept art, idea development, and visual storytelling.</p>
+</div>
+<div class="glass-card rounded-[24px] p-5">
+<p class="text-label-md text-tertiary uppercase tracking-widest mb-3">Volunteering</p>
+<p class="text-on-surface-variant">Society of Computer Sciences active member, 2023 - 2025.</p>
+</div>
+<div class="glass-card rounded-[24px] p-5">
+<p class="text-label-md text-tertiary uppercase tracking-widest mb-3">Volunteering</p>
+<p class="text-on-surface-variant">IEEE Student Branch of SUSL student volunteer, 2023 - 2025.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section-gap px-5 md:px-gutter max-w-container-max mx-auto py-20 md:py-24 mb-10 md:mb-16" id="contact">
+<div class="glass-card rounded-[36px] md:rounded-[48px] p-6 md:p-14 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-cyan-glow/10 blur-[120px] -z-10"></div>
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-16">
+<div class="reveal-up">
+<h2 class="font-headline-lg text-4xl md:text-headline-lg mb-6">Let's <span class="text-tertiary">Connect</span></h2>
+<p class="text-on-surface-variant mb-10">If you need front-end development, UI/UX support, product visuals, or creative design work, I’m open to discussing collaborations and new opportunities.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 text-cyan-glow">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-widest">Email</p>
+<a class="font-headline-md text-lg hover:text-cyan-glow" href="mailto:janmadhuwantha@gmail.com">janmadhuwantha@gmail.com</a>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 text-cyan-glow">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-widest">Phone</p>
+<a class="font-headline-md text-lg hover:text-cyan-glow" href="tel:+94705242912">+94 70 524 2912</a>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 text-cyan-glow">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-label-md text-on-surface-variant uppercase tracking-widest">Location</p>
+<p class="font-headline-md text-lg">Colombo, Sri Lanka</p>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
+<a class="glass-card rounded-2xl px-4 py-3 text-center hover:text-cyan-glow" href="https://dribbble.com/Madhu6114" rel="noreferrer" target="_blank">Dribbble</a>
+<a class="glass-card rounded-2xl px-4 py-3 text-center hover:text-cyan-glow" href="https://www.behance.net/nimeshmadhu" rel="noreferrer" target="_blank">Behance</a>
+<a class="glass-card rounded-2xl px-4 py-3 text-center hover:text-cyan-glow" href="https://github.com/NimeshMadhuwantha" rel="noreferrer" target="_blank">GitHub</a>
+<a class="glass-card rounded-2xl px-4 py-3 text-center hover:text-cyan-glow" href="https://www.linkedin.com/in/nimesh-m-8a37102b4/" rel="noreferrer" target="_blank">LinkedIn</a>
+</div>
+</div>
+<div class="reveal-up" style="transition-delay: 100ms">
+<form class="space-y-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div>
+<label class="font-label-md block mb-2">Name</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-glow focus:ring-1 focus:ring-cyan-glow outline-none transition-all" placeholder="Your Name" type="text"/>
+</div>
+<div>
+<label class="font-label-md block mb-2">Email</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-glow focus:ring-1 focus:ring-cyan-glow outline-none transition-all" placeholder="Your Email" type="email"/>
+</div>
+</div>
+<div>
+<label class="font-label-md block mb-2">Subject</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-glow focus:ring-1 focus:ring-cyan-glow outline-none transition-all" placeholder="Project Inquiry" type="text"/>
+</div>
+<div>
+<label class="font-label-md block mb-2">Message</label>
+<textarea class="w-full bg-surface-container-lowest border border-white/10 rounded-xl px-4 py-3 focus:border-cyan-glow focus:ring-1 focus:ring-cyan-glow outline-none transition-all" placeholder="Tell me about your project..." rows="5"></textarea>
+</div>
+<a class="w-full bg-gradient-to-r from-ocean-blue to-cyan-glow text-on-primary-fixed py-4 rounded-xl font-bold magnetic-button shadow-xl shadow-ocean-blue/20 block text-center" href="mailto:janmadhuwantha@gmail.com?subject=Project%20Inquiry">
+                        Send Message
+                    </a>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="w-full relative overflow-hidden bg-gradient-to-t from-primary-container to-surface-container-lowest border-t border-tertiary/20">
+<div class="flex flex-col lg:flex-row justify-between items-center gap-6 px-5 md:px-gutter py-10 max-w-container-max mx-auto text-center lg:text-left">
+<div class="font-headline-md text-2xl md:text-headline-md text-primary font-bold">
+                Nimesh <span class="text-on-surface">M.</span>
+</div>
+<div class="text-on-surface-variant/70">
+<p class="font-label-md text-label-md tracking-widest uppercase">Front-End Software Engineer | UI/UX Engineer | Product Designer | Concept Artist</p>
+</div>
+<div class="text-on-surface-variant/60 text-sm">
+<p>Designed &amp; developed by Nimesh Madhuwantha</p>
+<p class="mt-1">© 2026. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        const cursor = document.getElementById('cursor');
+        const cursorFollower = document.getElementById('cursor-follower');
+
+        if (cursor && cursorFollower) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+
+                setTimeout(() => {
+                    cursorFollower.style.left = e.clientX - 15 + 'px';
+                    cursorFollower.style.top = e.clientY - 15 + 'px';
+                }, 50);
+            });
+
+            document.querySelectorAll('a, button').forEach((el) => {
+                el.addEventListener('mouseenter', () => {
+                    cursorFollower.style.transform = 'scale(2)';
+                    cursorFollower.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorFollower.style.transform = 'scale(1)';
+                    cursorFollower.style.backgroundColor = 'transparent';
+                });
+            });
+        }
+
+        let currentIdx = 0;
+        const titles = document.getElementById('rotating-titles');
+        const titleCount = titles ? titles.children.length : 0;
+
+        if (titles && titleCount > 0) {
+            setInterval(() => {
+                currentIdx = (currentIdx + 1) % titleCount;
+                titles.style.transform = `translateY(-${currentIdx * 48}px)`;
+            }, 3000);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-up').forEach((el) => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener('click', function (e) {
+                const targetSelector = this.getAttribute('href');
+                const target = document.querySelector(targetSelector);
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileButton = document.getElementById('mobile-menu-button');
+                if (mobileMenu && mobileButton) {
+                    mobileMenu.classList.add('hidden');
+                    mobileButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', String(!isHidden));
+            });
+        }
+
+        const projectTrack = document.getElementById('project-track');
+        const projectCards = Array.from(document.querySelectorAll('.project-card'));
+        const projectFilters = Array.from(document.querySelectorAll('.project-filter'));
+
+        function scrollProjects(direction) {
+            if (!projectTrack) return;
+            const card = projectTrack.querySelector('.project-card:not(.hidden)');
+            const amount = card ? card.getBoundingClientRect().width + 24 : 404;
+            projectTrack.scrollBy({ left: direction * amount, behavior: 'smooth' });
+        }
+
+        function setFilter(filter) {
+            projectFilters.forEach((button) => {
+                const active = button.dataset.filter === filter;
+                button.classList.toggle('bg-gradient-to-r', active);
+                button.classList.toggle('from-ocean-blue', active);
+                button.classList.toggle('to-cyan-glow', active);
+                button.classList.toggle('text-white', active);
+                button.classList.toggle('border-cyan-glow/40', active);
+                if (!active) {
+                    button.classList.add('bg-surface-container-high');
+                } else {
+                    button.classList.remove('bg-surface-container-high');
+                }
+            });
+
+            projectCards.forEach((card) => {
+                const categories = (card.dataset.category || '').split(' ');
+                const show = filter === 'all' || categories.includes(filter);
+                card.classList.toggle('hidden', !show);
+            });
+
+            if (projectTrack) {
+                projectTrack.scrollTo({ left: 0, behavior: 'smooth' });
+            }
+        }
+
+        projectFilters.forEach((button) => {
+            button.addEventListener('click', () => setFilter(button.dataset.filter || 'all'));
+        });
+
+        document.getElementById('projects-prev')?.addEventListener('click', () => scrollProjects(-1));
+        document.getElementById('projects-next')?.addEventListener('click', () => scrollProjects(1));
+        setFilter('all');
+    </script>
+</body>
+</html>

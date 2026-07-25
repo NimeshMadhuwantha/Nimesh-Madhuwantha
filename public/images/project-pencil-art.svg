@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0c1016"/>
+      <stop offset="100%" stop-color="#1a2029"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="120" y="120" width="1360" height="760" rx="42" fill="#11161d" stroke="#f8f8f8" stroke-opacity=".14"/>
+  <rect x="220" y="200" width="360" height="560" rx="18" fill="#d8d0c5"/>
+  <rect x="620" y="200" width="360" height="560" rx="18" fill="#c9c1b5"/>
+  <rect x="1020" y="200" width="360" height="560" rx="18" fill="#bcb4a8"/>
+  <path d="M300 640 C360 360 480 360 500 620" fill="none" stroke="#343434" stroke-width="10"/>
+  <circle cx="780" cy="390" r="90" fill="none" stroke="#343434" stroke-width="10"/>
+  <path d="M1120 650 L1280 330" stroke="#343434" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1070 670 L1200 270" stroke="#666" stroke-width="4" stroke-linecap="round"/>
+  <text x="180" y="860" fill="#d7d4cf" font-family="Montserrat, Arial, sans-serif" font-size="78" font-weight="700">Pencil Art Collection</text>
+</svg>
