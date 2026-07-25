@@ -179,8 +179,12 @@
             scrollbar-width: none;
             scroll-behavior: smooth;
             overscroll-behavior-x: contain;
+            overscroll-behavior-inline: contain;
             touch-action: pan-y pinch-zoom;
             overflow-y: hidden;
+            overscroll-behavior-y: none;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding-inline: .25rem;
             cursor: grab;
         }
         .project-track::-webkit-scrollbar {
@@ -192,8 +196,15 @@
         }
 
         .project-card {
-            flex: 0 0 min(100%, 380px);
+            flex: 0 0 clamp(280px, 34vw, 420px);
             scroll-snap-align: start;
+            user-select: none;
+        }
+
+        @media (max-width: 639px) {
+            .project-card {
+                flex-basis: calc(100% - 1rem);
+            }
         }
 
         .project-tag {
@@ -486,7 +497,7 @@ void main() {
 <span class="w-2 h-2 rounded-full bg-cyan-glow animate-pulse"></span>
 <span class="text-[11px] sm:text-label-md tracking-[0.18em] text-on-surface-variant uppercase">Available for new opportunities</span>
 </div>
-<h1 class="font-headline-xl text-4xl sm:text-5xl md:text-6xl lg:text-headline-xl leading-[1.02] sm:leading-tight">
+<h1 class="font-headline-xl font-black tracking-[-0.04em] text-[2.8rem] leading-[0.95] sm:text-5xl sm:leading-tight md:text-6xl lg:text-headline-xl">
                     NIMESH <br/>
 <span class="gradient-text">MADHUWANTHA</span>
 </h1>
@@ -805,6 +816,8 @@ void main() {
 </div></div></div></div>
 <div class="mt-16 md:mt-20"><div class="mb-6 md:mb-8 reveal-up"><p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">04 · Art</p><h3 class="font-headline-md text-2xl md:text-3xl">Traditional &amp; Concept Art</h3></div><div class="project-shell reveal-up"><div class="hidden lg:block"><button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="art-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="art-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="flex lg:hidden justify-end gap-3 mb-4"><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="art-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="art-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="overflow-hidden"><div class="project-track flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 px-1" id="art-track">
 <article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Pencil art portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/Pencil-art-emma.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Pencil</span><span class="project-tag">Portrait</span></div><h4 class="font-headline-md text-2xl mb-2">Pencil Portraits</h4><p class="text-on-surface-variant text-body-md">Detailed graphite studies focused on expression, texture, and patient observation.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Bunny graphic art study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-bunny.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Graphic Art</span><span class="project-tag">Character</span></div><h4 class="font-headline-md text-2xl mb-2">Bunny Art Study</h4><p class="text-on-surface-variant text-body-md">A playful character artwork exploring shape, expression, and illustrative detail.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Watercolor bird artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/waterColour-bird.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Watercolour</span><span class="project-tag">Nature</span></div><h4 class="font-headline-md text-2xl mb-2">Watercolour Bird</h4><p class="text-on-surface-variant text-body-md">A soft traditional study inspired by nature, movement, and expressive colour.</p></div></div></article>
 <article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Digital art snow fox" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/g-art-snow-fox.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Digital Art</span><span class="project-tag">Illustration</span></div><h4 class="font-headline-md text-2xl mb-2">Digital Art Studies</h4><p class="text-on-surface-variant text-body-md">Digital artwork exploring atmosphere, color, and expressive character-focused illustration.</p></div></div></article>
 <article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Concept pencil art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-moongirl.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Concept Art</span><span class="project-tag">Sketching</span></div><h4 class="font-headline-md text-2xl mb-2">Visual Character Studies</h4><p class="text-on-surface-variant text-body-md">Character-led studies exploring mood, silhouette, and imaginative visual storytelling.</p></div></div></article>
 <article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Cartoon character drawing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-g2-skul-girl.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Cartoon</span><span class="project-tag">Character Drawing</span></div><h4 class="font-headline-md text-2xl mb-2">Character Commissions</h4><p class="text-on-surface-variant text-body-md">Cartoon and character drawings developed from requested ideas, personalities, and visual references.</p></div></div></article>
@@ -1161,30 +1174,18 @@ void main() {
                 projectTrack.classList.remove('dragging');
             };
 
-            projectTrack.addEventListener('mousedown', (event) => {
+            projectTrack.addEventListener('pointerdown', (event) => {
+                if (event.pointerType === 'mouse' && event.button !== 0) return;
                 startDrag(event.clientX);
+                projectTrack.setPointerCapture?.(event.pointerId);
             });
-
-            projectTrack.addEventListener('mousemove', (event) => {
-                moveDrag(event.clientX);
+            projectTrack.addEventListener('pointermove', (event) => moveDrag(event.clientX));
+            projectTrack.addEventListener('pointerup', (event) => {
+                projectTrack.releasePointerCapture?.(event.pointerId);
+                endDrag();
             });
-
-            projectTrack.addEventListener('mouseleave', endDrag);
-            window.addEventListener('mouseup', endDrag);
-
-            projectTrack.addEventListener('touchstart', (event) => {
-                const touch = event.touches[0];
-                if (!touch) return;
-                startDrag(touch.clientX);
-            }, { passive: true });
-
-            projectTrack.addEventListener('touchmove', (event) => {
-                const touch = event.touches[0];
-                if (!touch) return;
-                moveDrag(touch.clientX);
-            }, { passive: true });
-
-            projectTrack.addEventListener('touchend', endDrag, { passive: true });
+            projectTrack.addEventListener('pointercancel', endDrag);
+            projectTrack.addEventListener('pointerleave', endDrag);
         });
     </script>
 </body>
