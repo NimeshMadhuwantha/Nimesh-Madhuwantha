@@ -107,6 +107,37 @@
         }
         .float-animation { animation: float 6s ease-in-out infinite; }
 
+        body { position: relative; overflow-x: hidden; }
+        body > header, body > section, body > footer, body > nav { position: relative; z-index: 1; }
+        .ambient-background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background-image: linear-gradient(rgba(56,189,248,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,.035) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: linear-gradient(to bottom, black, transparent 92%);
+        }
+        .ambient-orb {
+            position: absolute;
+            width: 32rem;
+            height: 32rem;
+            border-radius: 9999px;
+            filter: blur(90px);
+            opacity: .16;
+            transform: translate3d(calc(var(--motion-x, 0) * 1px), calc(var(--motion-y, 0) * 1px), 0);
+            transition: transform 1.2s ease-out;
+            animation: ambient-drift 16s ease-in-out infinite alternate;
+        }
+        .ambient-orb.one { top: -12rem; left: -10rem; background: #0099ff; }
+        .ambient-orb.two { top: 35%; right: -14rem; background: #38bdf8; animation-delay: -6s; }
+        .ambient-orb.three { bottom: -16rem; left: 28%; background: #6366f1; animation-delay: -10s; }
+        @keyframes ambient-drift { from { margin: 0; } to { margin: 18px -14px; } }
+        @media (prefers-reduced-motion: reduce) {
+            .ambient-orb { animation: none; transition: none; }
+        }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -154,6 +185,24 @@
             transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s;
         }
 
+        .whatsapp-button {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            z-index: 50;
+            width: 3.5rem;
+            height: 3.5rem;
+            display: grid;
+            place-items: center;
+            border-radius: 9999px;
+            color: white;
+            background: #25D366;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, .3);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .whatsapp-button:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 14px 36px rgba(37, 211, 102, .45); }
+        @media (max-width: 639px) { .whatsapp-button { right: 1rem; bottom: 1rem; width: 3.1rem; height: 3.1rem; } }
+
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0b0f10; }
         ::-webkit-scrollbar-thumb { background: #323537; border-radius: 4px; }
@@ -179,8 +228,13 @@
             scrollbar-width: none;
             scroll-behavior: smooth;
             overscroll-behavior-x: contain;
+            overscroll-behavior-inline: contain;
             touch-action: pan-y pinch-zoom;
             overflow-y: hidden;
+            overscroll-behavior-y: auto;
+            overflow-y: clip;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding-inline: .25rem;
             cursor: grab;
         }
         .project-track::-webkit-scrollbar {
@@ -192,8 +246,15 @@
         }
 
         .project-card {
-            flex: 0 0 min(100%, 380px);
+            flex: 0 0 clamp(280px, 34vw, 420px);
             scroll-snap-align: start;
+            user-select: none;
+        }
+
+        @media (max-width: 639px) {
+            .project-card {
+                flex-basis: calc(100% - 1rem);
+            }
         }
 
         .project-tag {
@@ -271,8 +332,18 @@
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-cyan-glow/30">
+<div aria-hidden="true" class="ambient-background" id="ambient-background">
+<div class="ambient-orb one"></div>
+<div class="ambient-orb two"></div>
+<div class="ambient-orb three"></div>
+</div>
 <div class="custom-cursor hidden md:block" id="cursor"></div>
 <div class="cursor-follower hidden md:block" id="cursor-follower"></div>
+<a aria-label="Chat on WhatsApp" class="whatsapp-button" href="https://wa.me/94705242912" rel="noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" width="25" height="25">
+<path d="M12.04 2C6.52 2 2.03 6.49 2.03 12c0 1.76.46 3.41 1.34 4.86L2 22l5.28-1.34A9.96 9.96 0 0 0 12.04 22C17.55 22 22 17.51 22 12S17.55 2 12.04 2Zm0 18.28c-1.56 0-3.09-.42-4.42-1.21l-.32-.19-3.13.8.83-3.05-.21-.33A8.27 8.27 0 0 1 3.72 12c0-4.59 3.73-8.32 8.32-8.32 4.59 0 8.32 3.73 8.32 8.32s-3.73 8.28-8.32 8.28Zm4.56-6.23c-.25-.13-1.47-.73-1.7-.81-.23-.08-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.39.11-.52.12-.12.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.36-.78-1.86-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.32-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.13.17 1.77 2.7 4.28 3.79.6.26 1.07.42 1.44.54.61.19 1.17.16 1.61.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/>
+</svg>
+</a>
 <!-- STITCH_SHADER_START:ANIMATION_10 class="fixed inset-0 w-full h-full opacity-40 pointer-events-none z-[-2]" -->
 <div class="fixed inset-0 w-full h-full opacity-40 pointer-events-none z-[-2]" style="display:block;">
 <canvas id="shader-canvas-ANIMATION_10" style="display:block;width:100%;height:100%"></canvas>
@@ -486,7 +557,7 @@ void main() {
 <span class="w-2 h-2 rounded-full bg-cyan-glow animate-pulse"></span>
 <span class="text-[11px] sm:text-label-md tracking-[0.18em] text-on-surface-variant uppercase">Available for new opportunities</span>
 </div>
-<h1 class="font-headline-xl text-4xl sm:text-5xl md:text-6xl lg:text-headline-xl leading-[1.02] sm:leading-tight">
+<h1 class="font-headline-xl font-black tracking-[-0.04em] text-[2.8rem] leading-[0.95] sm:text-5xl sm:leading-tight md:text-6xl lg:text-headline-xl">
                     NIMESH <br/>
 <span class="gradient-text">MADHUWANTHA</span>
 </h1>
@@ -805,6 +876,8 @@ void main() {
 </div></div></div></div>
 <div class="mt-16 md:mt-20"><div class="mb-6 md:mb-8 reveal-up"><p class="text-label-md text-tertiary uppercase tracking-[0.2em] mb-2">04 · Art</p><h3 class="font-headline-md text-2xl md:text-3xl">Traditional &amp; Concept Art</h3></div><div class="project-shell reveal-up"><div class="hidden lg:block"><button class="project-nav prev glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="art-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav next glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="art-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="flex lg:hidden justify-end gap-3 mb-4"><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-prev="art-track" type="button"><span class="material-symbols-outlined">arrow_back</span></button><button class="project-nav glass-card flex items-center justify-center hover:border-cyan-glow" data-project-next="art-track" type="button"><span class="material-symbols-outlined">arrow_forward</span></button></div><div class="overflow-hidden"><div class="project-track flex gap-5 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 px-1" id="art-track">
 <article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Pencil art portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/Pencil-art-emma.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Pencil</span><span class="project-tag">Portrait</span></div><h4 class="font-headline-md text-2xl mb-2">Pencil Portraits</h4><p class="text-on-surface-variant text-body-md">Detailed graphite studies focused on expression, texture, and patient observation.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Bunny graphic art study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-bunny.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Graphic Art</span><span class="project-tag">Character</span></div><h4 class="font-headline-md text-2xl mb-2">Bunny Art Study</h4><p class="text-on-surface-variant text-body-md">A playful character artwork exploring shape, expression, and illustrative detail.</p></div></div></article>
+<article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Watercolor bird artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/waterColour-bird.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Watercolour</span><span class="project-tag">Nature</span></div><h4 class="font-headline-md text-2xl mb-2">Watercolour Bird</h4><p class="text-on-surface-variant text-body-md">A soft traditional study inspired by nature, movement, and expressive colour.</p></div></div></article>
 <article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Digital art snow fox" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/g-art-snow-fox.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Digital Art</span><span class="project-tag">Illustration</span></div><h4 class="font-headline-md text-2xl mb-2">Digital Art Studies</h4><p class="text-on-surface-variant text-body-md">Digital artwork exploring atmosphere, color, and expressive character-focused illustration.</p></div></div></article>
 <article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Concept pencil art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-moongirl.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Concept Art</span><span class="project-tag">Sketching</span></div><h4 class="font-headline-md text-2xl mb-2">Visual Character Studies</h4><p class="text-on-surface-variant text-body-md">Character-led studies exploring mood, silhouette, and imaginative visual storytelling.</p></div></div></article>
 <article class="project-card group"><div class="glass-card overflow-hidden rounded-[32px] h-full"><div class="relative aspect-[16/10] overflow-hidden"><img alt="Cartoon character drawing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/images/p-art-g2-skul-girl.webp"/></div><div class="p-6"><div class="flex flex-wrap gap-2 mb-3"><span class="project-tag">Cartoon</span><span class="project-tag">Character Drawing</span></div><h4 class="font-headline-md text-2xl mb-2">Character Commissions</h4><p class="text-on-surface-variant text-body-md">Cartoon and character drawings developed from requested ideas, personalities, and visual references.</p></div></div></article>
@@ -825,16 +898,16 @@ void main() {
 <div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Years Creative Work</div>
 </div>
 <div class="glass-card p-6 md:p-7 rounded-3xl">
-<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">4</div>
-<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Highlighted Domains</div>
+<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">400+</div>
+<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Projects</div>
 </div>
 <div class="glass-card p-6 md:p-7 rounded-3xl">
-<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">3.28</div>
-<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Current GPA</div>
+<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">200+</div>
+<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Clients</div>
 </div>
 <div class="glass-card p-6 md:p-7 rounded-3xl">
-<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">2024</div>
-<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Latest Certifications</div>
+<div class="text-3xl md:text-4xl font-extrabold text-cyan-glow mb-2">5★ 200+</div>
+<div class="text-xs md:text-sm text-on-surface-variant uppercase tracking-widest">Reviews</div>
 </div>
 </div>
 </div>
@@ -1037,8 +1110,8 @@ void main() {
 </section>
 <footer class="w-full relative overflow-hidden bg-gradient-to-t from-primary-container to-surface-container-lowest border-t border-tertiary/20">
 <div class="flex flex-col xl:flex-row justify-between items-center xl:items-start gap-5 md:gap-6 px-4 sm:px-5 md:px-gutter py-8 md:py-10 max-w-container-max mx-auto text-center xl:text-left">
-<div class="font-headline-md text-xl sm:text-2xl md:text-headline-md text-primary font-bold">
-                Nimesh <span class="text-on-surface">M.</span>
+<div class="font-headline-md text-xl sm:text-2xl md:text-headline-md font-bold text-on-surface tracking-tighter shrink-0">
+                N<span class="text-tertiary">M</span>
 </div>
 <div class="text-on-surface-variant/70 max-w-2xl">
 <p class="font-label-md text-xs sm:text-label-md tracking-[0.18em] uppercase">Front-End Software Engineer | UI/UX Engineer | Product Designer | Concept Artist</p>
@@ -1141,19 +1214,32 @@ void main() {
 
             let isDragging = false;
             let startX = 0;
+            let startY = 0;
+            let dragAxis = null;
             let startScrollLeft = 0;
 
-            const startDrag = (clientX) => {
+            const startDrag = (clientX, clientY) => {
                 isDragging = true;
                 startX = clientX;
+                startY = clientY;
+                dragAxis = null;
                 startScrollLeft = projectTrack.scrollLeft;
                 projectTrack.classList.add('dragging');
             };
 
-            const moveDrag = (clientX) => {
+            const moveDrag = (clientX, clientY) => {
                 if (!isDragging) return;
-                const walk = clientX - startX;
-                projectTrack.scrollLeft = startScrollLeft - walk;
+                const deltaX = clientX - startX;
+                const deltaY = clientY - startY;
+                if (!dragAxis && Math.max(Math.abs(deltaX), Math.abs(deltaY)) > 6) {
+                    dragAxis = Math.abs(deltaX) >= Math.abs(deltaY) ? 'x' : 'y';
+                }
+                if (dragAxis === 'y') {
+                    endDrag();
+                    return;
+                }
+                if (dragAxis !== 'x') return;
+                projectTrack.scrollLeft = startScrollLeft - deltaX;
             };
 
             const endDrag = () => {
@@ -1161,31 +1247,46 @@ void main() {
                 projectTrack.classList.remove('dragging');
             };
 
-            projectTrack.addEventListener('mousedown', (event) => {
-                startDrag(event.clientX);
+            projectTrack.addEventListener('pointerdown', (event) => {
+                if (event.pointerType === 'mouse' && event.button !== 0) return;
+                startDrag(event.clientX, event.clientY);
+                projectTrack.setPointerCapture?.(event.pointerId);
             });
-
-            projectTrack.addEventListener('mousemove', (event) => {
-                moveDrag(event.clientX);
+            projectTrack.addEventListener('pointermove', (event) => moveDrag(event.clientX, event.clientY));
+            projectTrack.addEventListener('pointerup', (event) => {
+                projectTrack.releasePointerCapture?.(event.pointerId);
+                endDrag();
             });
-
-            projectTrack.addEventListener('mouseleave', endDrag);
-            window.addEventListener('mouseup', endDrag);
-
-            projectTrack.addEventListener('touchstart', (event) => {
-                const touch = event.touches[0];
-                if (!touch) return;
-                startDrag(touch.clientX);
-            }, { passive: true });
-
-            projectTrack.addEventListener('touchmove', (event) => {
-                const touch = event.touches[0];
-                if (!touch) return;
-                moveDrag(touch.clientX);
-            }, { passive: true });
-
-            projectTrack.addEventListener('touchend', endDrag, { passive: true });
+            projectTrack.addEventListener('pointercancel', endDrag);
+            projectTrack.addEventListener('pointerleave', endDrag);
         });
+
+        const ambientBackground = document.getElementById('ambient-background');
+        const updateAmbientMotion = (x, y) => {
+            if (!ambientBackground) return;
+            ambientBackground.style.setProperty('--motion-x', String(Math.max(-24, Math.min(24, x))));
+            ambientBackground.style.setProperty('--motion-y', String(Math.max(-24, Math.min(24, y))));
+        };
+        window.addEventListener('pointermove', (event) => {
+            if (event.pointerType === 'touch') return;
+            updateAmbientMotion((event.clientX / window.innerWidth - .5) * 18, (event.clientY / window.innerHeight - .5) * 18);
+        }, { passive: true });
+        const handleDeviceOrientation = (event) => {
+            updateAmbientMotion((event.gamma || 0) * .7, (event.beta || 0) * .35);
+        };
+        if (window.DeviceOrientationEvent) {
+            const enableMotion = () => {
+                if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                    DeviceOrientationEvent.requestPermission().then((permission) => {
+                        if (permission === 'granted') window.addEventListener('deviceorientation', handleDeviceOrientation, { passive: true });
+                    }).catch(() => {});
+                } else {
+                    window.addEventListener('deviceorientation', handleDeviceOrientation, { passive: true });
+                }
+                window.removeEventListener('pointerdown', enableMotion);
+            };
+            window.addEventListener('pointerdown', enableMotion, { once: true, passive: true });
+        }
     </script>
 </body>
 </html>
